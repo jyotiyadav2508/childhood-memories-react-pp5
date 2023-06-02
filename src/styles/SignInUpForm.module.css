@@ -3,25 +3,25 @@
   }
   .Input {
     background: #ffffff;
-    border: 1px solid #f0f1f9;
+    border: 1px solid #ff9254;
     box-sizing: border-box;
-    border-radius: 2px;
+    border-radius: 100px;
     color: #7177a1;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
   }
   
   .Header {
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 19px;
     text-align: center;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #2142b2;
+    margin-bottom: 15px;
   }
-  
   .Link {
     text-decoration: none;
     text-align: center;
@@ -30,11 +30,13 @@
   }
   
   .Link span {
-    color: #ff9254;
+    color: #c64d07;
+    font-weight: 600;
   }
   
   .Container {
-    padding: 30px 10px;
+    padding: 25px 10px;
+    border:2px solod #ff9254;
   }
   
   .SignInCol {

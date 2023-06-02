@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import childhood from "../../assets/childhood-quote5.png";
 
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -43,8 +44,11 @@ const SignUpForm = () => {
           <Form onSubmit={handleSubmit}>
   <Form.Group controlId="username">
     <Form.Label className="d-none">Username</Form.Label>
-    <Form.Control className={styles.Input} type="text" placeholder="Username"
-    name="username" value={username}
+    <Form.Control className={styles.Input} 
+    type="text" 
+    placeholder="Username"
+    name="username"
+    value={username}
     onChange={handleChange} />
   </Form.Group>
   {errors.username?.map((message, idx) => (
@@ -55,9 +59,12 @@ const SignUpForm = () => {
 
   <Form.Group controlId="password1">
     <Form.Label className="d-none">Password</Form.Label>
-    <Form.Control className={styles.Input} type="password"
-    placeholder="Password" name="password1" value={password1}
-    onChange={handleChange} />
+    <Form.Control className={styles.Input} 
+        type="password"
+        placeholder="Password" 
+        name="password1" 
+        value={password1}
+        onChange={handleChange} />
   </Form.Group>
   {errors.password1?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
@@ -84,10 +91,7 @@ const SignUpForm = () => {
               </Alert>
             ))}
 </Form>
-
-        </Container>
-        <Container className={`mt-3 ${appStyles.Content}`}>
-          <Link className={styles.Link} to="/signin">
+<Link className={`mt-3 ${styles.Link}`} to="/signin">
             Already have an account? <span>Sign in</span>
           </Link>
         </Container>
@@ -99,9 +103,7 @@ const SignUpForm = () => {
         <Image
           className={`${appStyles.FillerImage}`}
         //   Pending work- to Change following picture
-          src={
-            "https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero2.jpg"
-          }
+          src={childhood} alt="childhood-quote" height="60" 
         />
       </Col>
     </Row>
