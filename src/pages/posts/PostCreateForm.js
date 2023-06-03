@@ -8,9 +8,9 @@ import { useHistory } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import Upload from "../../assets/upload.png";
 import Asset from "../../components/Asset";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-import styles from "../../styles/PostCreateEditForm.module.css";
-// import createFormStyles from '../../styles/PostCreateForm.module.css';
+import styles from "../../styles/PostCreateEditForm.module.css"; 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 // import { useRedirect } from '../../hooks/useRedirect';
@@ -24,6 +24,7 @@ function PostCreateForm() {
     // useRedirect("loggedOut");
 
   const [errors, setErrors] = useState({});
+  const currentUser = useCurrentUser();
 
   const [postData, setPostData] = useState({
     title:"",
@@ -82,7 +83,7 @@ function PostCreateForm() {
 
   return (
     <Container>
-        <h3 className={`${styles.Title} mt-3`}>Add a Post about your childhood memory!</h3>
+        <h3 className={`${styles.Title} mt-3`}>Welcome {currentUser?.username} , Let's share some childhood memory with us!</h3>
 
     <Form onSubmit={handleSubmit} className={`${styles.Container} mb-3`}>
     <Form.Group>
@@ -161,7 +162,7 @@ function PostCreateForm() {
                   <Asset
                     className={styles.Asset}
                     src={Upload}
-                    message="Click or tap to upload an image"
+                    message="Click here to upload an image"
                   />
                 </Form.Label>
             )}
@@ -182,12 +183,13 @@ function PostCreateForm() {
             <Button
         className={`${btnStyles.Button} ${btnStyles.Bright} mr-4`}
         onClick={() => history.goBack()}
+        aria-label="Click here to go back to previous page"
         type="submit"
       >
-        Cancel
+        <i className="fa-solid fa-arrow-left"></i> Go back
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} type="submit">
-        Submit
+      <i class="fa-solid fa-square-plus"></i>Submit Post
       </Button>
           
     </Form>
