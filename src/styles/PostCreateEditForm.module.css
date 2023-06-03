@@ -1,0 +1,27 @@
+.Container {
+    border: 2px solid #fa9455;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.Container h3,
+form {
+    /* color: #c95106; */
+    color:black;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: #01235d;
+}
+
+.Title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
