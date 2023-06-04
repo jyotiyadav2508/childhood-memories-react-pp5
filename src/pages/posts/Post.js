@@ -61,7 +61,7 @@ import { axiosRes } from "../../api/axiosDefaults";
    * To unlike a post by the user who liked it
    * Sends a request to the API 
    * Decreases likes number by 1
-  */
+  */ 
     const handleUnlike = async () => {
         try {
           await axiosRes.delete(`/likes/${like_id}/`);
