@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { DropdownMenu } from "../../components/DropdownMenu";
 
 
 /**
@@ -34,6 +35,32 @@ import { axiosRes } from "../../api/axiosDefaults";
      * */
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const history = useHistory();
+    const [showAlert, setShowAlert] = useState(false);
+
+        /*
+  Handles editing of the post
+*/
+const handleEdit = () => {
+    history.push(`/posts/${id}/edit`);
+};
+  /**
+      * Handles deleting of the post
+      * Shows Alert message when the post is deleted
+      * Redirects the user to the main page in over a second
+    */
+   const handleDelete = async () => {
+    try {
+        await axiosRes.delete(`/posts/${id}/`);
+        setShowAlert(true);
+        
+        setTimeout(function () {
+            history.goBack();
+        }, 1500);
+    } catch (err) {
+        // console.log(err);
+    }
+};
 
 
     /** 
@@ -88,7 +115,10 @@ import { axiosRes } from "../../api/axiosDefaults";
             </Link>
             <div className="d-flex align-items-center">
               <span>{updated_on}</span>
-              {is_owner && postPage && "..."}
+              {is_owner && postPage && <DropdownMenu
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete} />
+                            }
             </div>
           </Media>
         </Card.Body>
