@@ -11,15 +11,11 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/PostCreateEditForm.module.css"; 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-// import { useRedirect } from '../../hooks/useRedirect';
-
-
 
 /**
- * Form to create posts
+ * Form to edit posts
  */
 function PostEditForm() {
-    // useRedirect("loggedOut");
 
   const [errors, setErrors] = useState({});
   const currentUser = useCurrentUser();
@@ -30,6 +26,7 @@ function PostEditForm() {
     image:"",
     category:"",
   });
+  
   const {title, content, image, category} = postData;
   const imageInput = useRef(null);
   const history = useHistory()
