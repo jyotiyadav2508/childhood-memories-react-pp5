@@ -163,7 +163,6 @@ const handleEdit = () => {
       </Card>
     );
 
-
 }
 
 export default Post;

@@ -51,7 +51,7 @@ function CommentCreateForm(props) {
           </Link>
           <Form.Control
             className={styles.Form}
-            placeholder="my comment..."
+            placeholder="Enter your comment here..."
             as="textarea"
             value={content}
             onChange={handleChange}
@@ -64,7 +64,7 @@ function CommentCreateForm(props) {
         disabled={!content.trim()}
         type="submit"
       >
-        post
+        Comment
       </button>
     </Form>
   );

@@ -19,17 +19,14 @@ import { fetchMoreData } from "../../utils/utils";
  * Credit and Guidance: Moments walkthrough
  * Codes have been adepated as per project design
  */
-function PostDetailPage() {
+const PostDetailPage = () => {
     const { id } = useParams();
     const [post, setPost] = useState({ results: [] });
-
+    const currentUser = useCurrentUser();
+    const profile_image = currentUser?.profile_image;
+    const [comments, setComments] = useState({ results: [] });
 
     // Fetch a post and comment data
-
-    const currentUser = useCurrentUser();
-const profile_image = currentUser?.profile_image;
-const [comments, setComments] = useState({ results: [] });
-
     useEffect(() => {
         const handleMount = async () => {
           try {
@@ -55,6 +52,8 @@ const [comments, setComments] = useState({ results: [] });
         <p>Popular profiles for mobile</p>
         <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
+        <p className="text-center">Comments</p>
+          <hr />
         {currentUser ? (
                 <CommentCreateForm
                 profile_id={currentUser.profile_id}
