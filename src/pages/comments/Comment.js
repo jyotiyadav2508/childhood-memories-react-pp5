@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/Comment.module.css";
 import { DropdownMenu } from "../../components/DropdownMenu";
+import CommentEditForm from "./CommentEditForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -18,6 +19,7 @@ const Comment = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const [showEditForm, setShowEditForm] = useState(false);
 
 
      /** 
@@ -45,24 +47,38 @@ const Comment = (props) => {
     }catch(err){}
    };
 
-  return (
-    <div>
-        <hr />
-        <Media>
-            <Link to={`/profiles/${profile_id}`}>
-                <Avatar src={profile_image} />
-            </Link>
-            <Media.Body className="align-self-center ml-2">
+   return (
+    <>
+      <hr />
+      <Media>
+        <Link to={`/profiles/${profile_id}`}>
+          <Avatar src={profile_image} />
+        </Link>
+        <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_on}</span>
-          <p>{content}</p>
+          {showEditForm ? (
+            <CommentEditForm 
+            id={id}
+            profile_id={profile_id}
+            content={content}
+            profileImage={profile_image}
+            setComments={setComments}
+            setShowEditForm={setShowEditForm}/>
+          ) : (
+            <p>{content}</p>
+          )}
         </Media.Body>
-        {is_owner && (
-          <DropdownMenu handleEdit={() => {}} handleDelete={handleDelete} />
+        {/* Display the dropdown menu for owner of the comment
+                  to either edit or delete it */}
+        {is_owner && !showEditForm && (
+          <DropdownMenu
+            handleEdit={() => setShowEditForm(true)}
+            handleDelete={handleDelete}
+          />
         )}
-        </Media>
-    </div>
+      </Media>
+    </>
   );
-};
-
-export default Comment
+        };
+export default Comment;

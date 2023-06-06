@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -9,15 +8,18 @@ import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
 import Comment from "../comments/Comment";
+import Asset from "../../components/Asset";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 /**
  * Renders the PostPage, detailed page of a selected post.
  * Credit and Guidance: Moments walkthrough
  * Codes have been adepated as per project design
  */
-function PostPage() {
+function PostDetailPage() {
     const { id } = useParams();
     const [post, setPost] = useState({ results: [] });
 
@@ -65,12 +67,18 @@ const [comments, setComments] = useState({ results: [] });
                 "Comments"
                 ) : null}
                 {comments.results.length?(
-                    comments.results.map((comment) => (
-                        <Comment key={comment.id} {...comment}
-                        setPost = {setPost}
+                    <InfiniteScroll
+                    children={comments.results.map((comment) => (
+                      <Comment 
+                        key={comment.id} {...comment}
+                        setPost={setPost}
                         setComments={setComments} />
-                        
-                      ))
+                    ))}
+                    dataLength={comments.results.length}
+                    loader={<Asset spinner />}
+                    hasMore={!!comments.next}
+                    next={() => fetchMoreData(comments, setComments)}
+                  />
                 ): currentUser ?(
                     <span>No comments yet, be the first to comment!</span>
                 ):(
@@ -86,4 +94,4 @@ const [comments, setComments] = useState({ results: [] });
   );
 }
 
-export default PostPage;
+export default PostDetailPage;
