@@ -63,32 +63,21 @@ function ProfilePage() {
   const mainProfile = (
     <>
     {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-      <Row noGutters className="px-3 text-center">
+      <Row noGutters className={`${styles.Profile} px-3 text-center`}>
         <Col lg={3} className="text-lg-left">
-        <Image
+     <Image
             className={styles.ProfileImage}
             roundedCircle
             src={profile?.image}
           />
         </Col>
         <Col lg={6}>
-          <h3 className="m-2">{profile?.owner}</h3>
-          <Row className="justify-content-center no-gutters">
-            <Col xs={3} className="my-2">
-              <div>{profile?.posts_count}</div>
-              <div>posts</div>
+        <h3 className="m-2">{profile?.owner}</h3>
+        <p >Profession: {profile?.Profession}</p>
+        <p >Location:  {profile?.Location}</p>
+        <p>Joined on {profile?.created_on}</p>
             </Col>
-            <Col xs={3} className="my-2">
-              <div>{profile?.followers_count}</div>
-              <div>followers</div>
-            </Col>
-            <Col xs={3} className="my-2">
-              <div>{profile?.following_count}</div>
-              <div>following</div>
-            </Col>
-          </Row>
-        </Col>
-        <Col lg={3} className="text-lg-right">
+            <Col lg={3} className="text-lg-right mt-2">
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
@@ -107,6 +96,26 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
+        </Row>
+        <hr />
+        <Row>
+        <Col lg={12}>
+          <Row className="justify-content-center no-gutters">
+            <Col xs={4} className={`${styles.Border} my-2 text-center`}>
+              <div >{profile?.posts_count}</div>
+              <div>posts</div>
+            </Col>
+            <Col xs={4} className={`${styles.Border} my-2 text-center`}>
+              <div>{profile?.followers_count}</div>
+              <div>followers</div>
+            </Col>
+            <Col xs={4} className= "my-2 text-center">
+              <div>{profile?.following_count}</div>
+              <div>following</div>
+            </Col>
+          </Row>
+        </Col>
+    
         {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
     </>
@@ -114,8 +123,8 @@ function ProfilePage() {
 
   const mainProfilePosts = (
     <>
-      <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
+      <hr />      
+      <h5 className="text-center">See what {profile?.owner} has posted so far! <i class="fa-regular fa-hand-point-down"></i></h5>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
@@ -129,7 +138,7 @@ function ProfilePage() {
       />
       ) : (
         <Asset src={NoResults}
-         message={`No results found, ${profile?.owner} hasn't posted yet.`} />
+         message={`Ohh, No results found, ${profile?.owner} hasn't posted yet.`} />
     )}
     </>
   );

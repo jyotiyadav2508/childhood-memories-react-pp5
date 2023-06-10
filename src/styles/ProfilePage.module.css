@@ -2,7 +2,8 @@
     object-fit: cover;
     height: 120px;
     width: 120px;
-    margin: 4px;
+    margin-top: 5px;
+    
   }
   
   @media screen and (max-width: 991px) {
@@ -11,6 +12,18 @@
       height: 250px;
     }
   }
+  .Border{
+    border-right: 2px solid orange;
+  }
+
+  .Profile{
+    background: linear-gradient( rgb(219, 246, 219), rgb(248, 217, 158), rgb(229, 244, 229));
+    justify-content: center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom: 1px solid rgb(191, 244, 191);
+
+}
   /* @media screen and (max-width: 468px) {
     .ProfileImage {
         width: 180px;
