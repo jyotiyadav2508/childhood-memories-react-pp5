@@ -13,7 +13,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/PostCreateEditForm.module.css"; 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-// import { useRedirect } from '../../hooks/useRedirect';
+import { useRedirect } from '../../hooks/useRedirect';
 
 
 
@@ -21,7 +21,7 @@ import btnStyles from "../../styles/Button.module.css";
  * Form to create posts
  */
 function PostCreateForm() {
-    // useRedirect("loggedOut");
+    useRedirect("loggedOut");
 
   const [errors, setErrors] = useState({});
   const currentUser = useCurrentUser();
