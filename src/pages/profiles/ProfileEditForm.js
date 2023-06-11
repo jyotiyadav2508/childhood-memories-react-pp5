@@ -26,21 +26,24 @@ const ProfileEditForm = () => {
   const imageFile = useRef();
 
   const [profileData, setProfileData] = useState({
-    name: "",
-    content: "",
+    profession: "",
+    location: "",
     image: "",
   });
-  const { name, content, image } = profileData;
+  const { profession, location, image } = profileData;
 
   const [errors, setErrors] = useState({});
-
+   /**
+     * If an authenticated user than retrieve existing data
+     * If not then redirect to homepage
+     */
   useEffect(() => {
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, content, image } = data;
-          setProfileData({ name, content, image });
+          const { profession, location, image } = data;
+          setProfileData({ profession, location, image });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -52,19 +55,23 @@ const ProfileEditForm = () => {
 
     handleMount();
   }, [currentUser, history, id]);
-
+ /**
+     * Updates empty key:value pairs in variable
+     */
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
       [event.target.name]: event.target.value,
     });
   };
-
+ /**
+     * Update the childhood-memories-drf-api with added profile data
+     */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("name", name);
-    formData.append("content", content);
+    formData.append("profession", profession);
+    formData.append("location", location);
 
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
@@ -85,18 +92,32 @@ const ProfileEditForm = () => {
 
   const textFields = (
     <>
-      <Form.Group>
-        <Form.Label>Bio</Form.Label>
+     <Form.Group>
+        <Form.Label>Profession</Form.Label>
         <Form.Control
           as="textarea"
-          value={content}
+          value={profession}
           onChange={handleChange}
-          name="content"
-          rows={7}
+          name="profession"
         />
       </Form.Group>
 
-      {errors?.content?.map((message, idx) => (
+      {errors?.profession?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group>
+        <Form.Label>Location</Form.Label>
+        <Form.Control
+          as="textarea"
+          value={location}
+          onChange={handleChange}
+          name="location"
+        />
+      </Form.Group>
+
+      {errors?.location?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -105,10 +126,10 @@ const ProfileEditForm = () => {
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
+        Save
       </Button>
     </>
   );

@@ -73,8 +73,8 @@ function ProfilePage() {
         </Col>
         <Col lg={6}>
         <h3 className="m-2">{profile?.owner}</h3>
-        <p >Profession: {profile?.Profession}</p>
-        <p >Location:  {profile?.Location}</p>
+        <p >Profession: {profile?.profession}</p>
+        <p >Location:  {profile?.location}</p>
         <p>Joined on {profile?.created_on}</p>
             </Col>
             <Col lg={3} className="text-lg-right mt-2">
