@@ -33,9 +33,9 @@ function App() {
       
     <div className={styles.App}>
         <>
-     {/* <NavBar />  */}
+     <NavBar /> 
      {/* <Header /> */}
-        <Sidebar />
+        {/* <Sidebar /> */}
     <Container fluid className={styles.Main}>
       <Switch>
           <Route exact 

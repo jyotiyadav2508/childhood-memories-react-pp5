@@ -50,6 +50,9 @@ const NavBar = () => {
    */
       const loggedInIcons = (
         <>
+        <NavLink className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/about"><i className='fas fa-sticky-note'></i>About</NavLink>
           <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
@@ -79,6 +82,9 @@ const NavBar = () => {
     // const loggedInIcons = <>{currentUser?.username}</>;
     const loggedOutIcons = (
     <>
+    <NavLink className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/about"><i className='fas fa-sticky-note'></i>About</NavLink>
     <NavLink className={styles.NavLink}
               activeClassName={styles.Active}
               to="/signin"><i className='fas fa-sign-in-alt'></i>Sign In</NavLink>
