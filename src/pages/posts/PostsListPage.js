@@ -12,6 +12,7 @@ import styles from "../../styles/PostsListPage.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import PopularProfiles from "../profiles/PopularProfiles";
+import Sidebar from "../../components/Sidebar";
 
 import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -57,6 +58,9 @@ function PostsListPage({ message, filter = "" }) {
   
   return (
     <Row className="h-100">
+        <Col className="p-0" lg={3}>
+        <Sidebar />
+        </Col>
       <Col className="py-2 p-0 p-lg-2" lg={6}>
         <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
@@ -96,7 +100,7 @@ function PostsListPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+      <Col lg={3} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
       </Col>
     </Row>
