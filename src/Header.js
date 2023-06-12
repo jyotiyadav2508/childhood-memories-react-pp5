@@ -22,7 +22,7 @@ const Header = () => {
         }
       };
     return(
-        <Navbar fixed="top" className={styles.NavBar}>
+        <Navbar fixed="top" position="relative" className={styles.NavBar}>
         <Container >
             <NavLink to="/">
             <img src={logo} alt="logo" height="60" />

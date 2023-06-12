@@ -144,6 +144,7 @@ function ProfilePage() {
   );
 
   return (
+    <Container>
     <Row>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
@@ -162,6 +163,7 @@ function ProfilePage() {
         <PopularProfiles />
       </Col>
     </Row>
+    </Container>
   );
 }
 

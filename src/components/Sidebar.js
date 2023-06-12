@@ -17,7 +17,7 @@ const Sidebar = () => {
   return (
     // <div style={{ display: 'flex', height: '100vh', margin:'70px 0 70px 0', overflow: 'scroll initial', fixed:'left' }}>
     <div className ={styles.SideBar}> 
-      <CDBSidebar textColor="#fff" backgroundColor="orange">
+      <CDBSidebar textColor="#fff" backgroundColor="#fa9455">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <NavLink to="/">
           <Navbar.Brand>

@@ -57,10 +57,11 @@ function PostsListPage({ message, filter = "" }) {
   }, [filter, query, pathname]);
   
   return (
+    <Container>
     <Row className="h-100">
-        <Col className="p-0" lg={3}>
+        {/* <Col className="p-0" lg={3}>
         <Sidebar />
-        </Col>
+        </Col> */}
       <Col className="py-2 p-0 p-lg-2" lg={6}>
         <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
@@ -104,6 +105,7 @@ function PostsListPage({ message, filter = "" }) {
         <PopularProfiles />
       </Col>
     </Row>
+    </Container>
   );
 }
 

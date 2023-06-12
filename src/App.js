@@ -31,8 +31,9 @@ function App() {
         // </Router>
       
     <div className={styles.App}>
-     <Header /> 
+        <>
      {/* <NavBar />  */}
+     {/* <Header /> */}
         <Sidebar />
     <Container fluid className={styles.Main}>
       <Switch>
@@ -64,7 +65,9 @@ function App() {
         </Switch>
       </Container> 
       <Footer /> 
+      </>
     </div>
+   
    
   );
 }
