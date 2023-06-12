@@ -6,6 +6,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import "./api/axiosDefaults";
 import Footer from "./Footer";
 import Header from "./Header";
+import About from "./pages/about/About";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
@@ -52,6 +53,7 @@ function App() {
           message="No results found. Try using other search keywords or like a post."
           filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_on&`} />} /
           >
+          <Route exact path="/about" render={() => <About />} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
