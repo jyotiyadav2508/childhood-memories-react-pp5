@@ -1,9 +1,10 @@
 import React from "react";
 import { Button, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import landingImage from "../assets/landing-img.jpg";
-import styles from "../styles/Button.module.css";
-import styles from "../styles/LandingPage.module.css";
+// import landingImage from "../../assets/landingPage-bg.jpg";
+import landingImage from "../../assets/landing-image.jpg";
+import btnStyles from "../../styles/Button.module.css";
+import styles from "../../styles/LandingPage.module.css";
 
 /** 
  * Landing page with information about the App
@@ -19,63 +20,40 @@ const LandingPage = () => {
                         <img
                             src={landingImage}
                             className={styles.LandingImage}
-                            alt="Image with quotes about memory"
+                            alt="Pic with quotes about memory"
                         />
                     </Col>
                     <Col lg={6} sm={12}>
                         <div className="text-center mt-3" >
-                            <h4 className="mb-3">Let's go back to old days!</h4>
+                            <h1 className="mb-3">Let's go back to old days!</h1>
 
-                            <h5>  It can be said that the inner child is kept alive by childhood memories. A childhood memory definitely does not define anyone but they play a pivotal role in one’s life.
-                            </h5>
+                            <p>  It can be said that the inner child is kept alive by childhood memories. A childhood memory definitely does not define anyone but they play a pivotal role in one’s life. There is always a child inside every person. It may come out all of a sudden at any stage in life. 
+                            </p>
                             <br />
                             
-                            <p><strong>Let's share the incomparable childhood memories!!</strong></p>
+                            <h4>Let us relive our childhood memories and share them!!!</h4><br />
                             <Link to="/about">
                                 <Button
-                                    className={`${styles.Button} mx-3 mb-2`}
+                                    className={`${btnStyles.Button} ${btnStyles.Bright} mb-2 py-2`}
                                 >
                                     Know More
                                 </Button>
                             </Link>
                             <Link to="/signup">
                                 <Button
-                                    className={`${styles.Button} mx-3 mb-2`}
+                                    className={`${btnStyles.Button} ${btnStyles.Bright} mx-3 mb-2 py-2`}
                                 >
-                                    New here? Join us!
+                                    New here? Sign Up!
                                 </Button>
                             </Link>
                             <Link to="/Signin">
-                                <Button className={`${styles.Button} mb-2`}>
+                                <Button className={`${btnStyles.Button} ${btnStyles.Bright} mb-2 py-2`}>
                                     Member? Sign In and Start!
                                 </Button>
                             </Link>
                         </div>
                     </Col>
                 </Row>
-                <Container>
-                    <footer className={`${styles.footer}`}>
-                        <div className="text-center">
-                            <p>For Education Purposes only! || Creator: Roshna Vakkeel</p>
-                            <a
-                                href="https://github.com/RoshnaVakkeel/be-inspired-pp5-ci"
-                                aria-label="Check the website GitHub page"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <i className="fab fa-github" />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/roshna-vakkeel/"
-                                aria-label="Visit me on LinkedIn (opens in new tab)"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <i className="fab fa-linkedin" />
-                            </a>
-                        </div>
-                    </footer>
-                </Container>
             </Container>
         </>
     );

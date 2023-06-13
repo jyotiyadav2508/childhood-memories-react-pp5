@@ -96,10 +96,10 @@ const NavBar = () => {
 
     return (
       <Navbar expanded={expanded} className={styles.NavBar} expand="md" fixed="top">
-        <Container>
+        <Container fluid>
             <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="60" />
+            <img src={logo} alt="logo" height="60" className="ml-5" />
           </Navbar.Brand></NavLink>
           {currentUser && addPostIcon}
           <Navbar.Toggle 
