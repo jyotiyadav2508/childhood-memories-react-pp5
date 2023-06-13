@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Navbar } from "react-bootstrap";
 import logo from "../assets/logo.png";
 // import styles from "../styles/NavBar.module.css";
@@ -10,19 +10,20 @@ import {
   CDBSidebarHeader,
   CDBSidebarMenu,
   CDBSidebarMenuItem,
-} from 'cdbreact';
-import { NavLink } from 'react-router-dom';
+} from "cdbreact";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     // <div style={{ display: 'flex', height: '100vh', margin:'70px 0 70px 0', overflow: 'scroll initial', fixed:'left' }}>
-    <div className ={styles.SideBar}> 
+    <div className={styles.SideBar}>
       <CDBSidebar textColor="#fff" backgroundColor="#fa9455">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <NavLink to="/">
-          <Navbar.Brand>
-            <img src={logo} alt="logo" height="50" />
-          </Navbar.Brand></NavLink>
+            <Navbar.Brand>
+              <img src={logo} alt="logo" height="50" />
+            </Navbar.Brand>
+          </NavLink>
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
@@ -52,13 +53,13 @@ const Sidebar = () => {
         <CDBSidebarFooter>
           <div
             style={{
-              padding: '20px 5px',
+              padding: "20px 5px",
             }}
           >
-           <NavLink className={styles.NavLink} to="/" >
-            <i className="fas fa-sign-out-alt"></i>Sign out
-          </NavLink>
-        {/* <a href="/"  className="text-decoration-none" style={{ color: 'inherit' }}>
+            <NavLink className={styles.NavLink} to="/">
+              <i className="fas fa-sign-out-alt"></i>Sign out
+            </NavLink>
+            {/* <a href="/"  className="text-decoration-none" style={{ color: 'inherit' }}>
         <i className="fas fa-sign-out-alt"></i>Sign Out</a> */}
           </div>
         </CDBSidebarFooter>

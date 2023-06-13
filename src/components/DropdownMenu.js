@@ -49,34 +49,34 @@ export const DropdownMenu = ({ handleEdit, handleDelete }) => {
  * Shows icons for edit profile & change password
  * Makes a request to fetch profile data based on the profile id
  * Credit - CI's Moments Walkthrough
-*/
+ */
 export function ProfileEditDropdown({ id }) {
-    const history = useHistory();
-    return (
-      <Dropdown className={`ml-auto pt-2 pr-4 ${styles.Absolute}`} drop="left">
-        <Dropdown.Toggle as={ThreeDots} />
-        <Dropdown.Menu>
-          <Dropdown.Item
-            onClick={() => history.push(`/profiles/${id}/edit`)}
-            aria-label="edit-profile"
-          >
-            <i className="fas fa-edit" /> edit profile
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={() => history.push(`/profiles/${id}/edit/username`)}
-            aria-label="edit-username"
-          >
-            <i className="far fa-id-card" />
-            change username
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={() => history.push(`/profiles/${id}/edit/password`)}
-            aria-label="edit-password"
-          >
-            <i className="fas fa-key" />
-            change password
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    );
-  }
+  const history = useHistory();
+  return (
+    <Dropdown className={`ml-auto pt-2 pr-4 ${styles.Absolute}`} drop="left">
+      <Dropdown.Toggle as={ThreeDots} />
+      <Dropdown.Menu>
+        <Dropdown.Item
+          onClick={() => history.push(`/profiles/${id}/edit`)}
+          aria-label="edit-profile"
+        >
+          <i className="fas fa-edit" /> edit profile
+        </Dropdown.Item>
+        <Dropdown.Item
+          onClick={() => history.push(`/profiles/${id}/edit/username`)}
+          aria-label="edit-username"
+        >
+          <i className="far fa-id-card" />
+          change username
+        </Dropdown.Item>
+        <Dropdown.Item
+          onClick={() => history.push(`/profiles/${id}/edit/password`)}
+          aria-label="edit-password"
+        >
+          <i className="fas fa-key" />
+          change password
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
