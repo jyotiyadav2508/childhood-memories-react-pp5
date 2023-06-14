@@ -20,6 +20,7 @@ const Comment = (props) => {
     updated_on,
     content,
     id,
+    post,
     setPost,
     setComments,
     comment_likes_id,
@@ -147,6 +148,7 @@ const Comment = (props) => {
               id={id}
               profile_id={profile_id}
               content={content}
+              post={post}
               profileImage={profile_image}
               updated_on={updated_on}
               setComments={setComments}
@@ -163,6 +165,7 @@ const Comment = (props) => {
             handleEdit={() => setShowEditForm(true)}
             handleDelete={handleDelete}
           />
+        
         )}
       </Media>
     </>

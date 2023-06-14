@@ -105,6 +105,9 @@ const Post = (props) => {
 
   return (
     <Card className={styles.Post}>
+         {/* {showAlert && (
+                <FeedbackMsg variant="info" message="Your post has been successfully deleted.." />
+            )} */}
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
