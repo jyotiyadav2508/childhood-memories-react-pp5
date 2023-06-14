@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
+import { Badge, Col, Container, Form, Row } from "react-bootstrap";
 
 import Post from "./Post";
 import Asset from "../../components/Asset";
@@ -15,6 +11,7 @@ import PopularProfiles from "../profiles/PopularProfiles";
 // import Sidebar from "../../components/Sidebar";
 
 import NoResults from "../../assets/no-results.png";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 
@@ -30,13 +27,21 @@ function PostsListPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-
+  const currentUser = useCurrentUser();  
   const [query, setQuery] = useState("");
+  const [category, setCategory] = useState(null);
 
+     /**
+    * Fetches posts from the API.
+    * Returns result based on search keywords.
+    */
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
+        const { data } = await axiosReq.get(
+            `/posts/?${filter}search=${query}${category !== null ? `&category=${category}` : ""
+            }`
+        );
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
@@ -54,15 +59,30 @@ function PostsListPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser, category]);
 
   return (
-    <Container>
-      <Row className="h-100">
+    <Container fluid>
+      <Row className="h-100 mt-2">
         {/* <Col className="p-0" lg={3}>
         <Sidebar />
         </Col> */}
-        <Col className="py-2 p-0 p-lg-2" lg={6}>
+        <Col className="px-2" sm={12} lg={3}>
+            <Container className={`${appStyles.Content} mt-3 mb-3`}>
+            <h5 className="text-center font-weight-bold mt-2"> Categories</h5>
+            <hr />
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("Books")}>Books</Badge>
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("Sport")}>Sport</Badge>
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("School")}>School</Badge>
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("Person")}>Person</Badge>
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("Place")}>Place</Badge>
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("Event")}>Event</Badge>
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("Media")}>Media</Badge>
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("Art")}>Art</Badge>
+            <Badge pill variant="info" className={`${styles.Badge} mb-2`} onClick={() => setCategory("Others")}>Others</Badge>
+            </Container>
+        </Col>
+        <Col className="py-2 p-0 p-lg-2" lg={6} sm={12}>
           <PopularProfiles mobile />
           <i className={`fas fa-search ${styles.SearchIcon}`} />
           <Form

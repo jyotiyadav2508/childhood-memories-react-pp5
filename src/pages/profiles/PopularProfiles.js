@@ -17,7 +17,7 @@ const PopularProfiles = ({ mobile }) => {
     >
       {popularProfiles.results.length ? (
         <>
-          <p className='text-center font-weight-bold mb-0"'>Popular Profiles</p>
+          <h5 className='text-center font-weight-bold mb-0"'>Popular Profiles</h5>
           <hr />
           {mobile ? (
             <div className="d-flex justify-content-around">
