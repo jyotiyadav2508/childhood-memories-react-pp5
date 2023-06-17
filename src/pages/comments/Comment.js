@@ -63,6 +63,7 @@ const Comment = (props) => {
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/comment_likes/", { comment: id });
+      console.log("data",data);
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {
@@ -73,8 +74,10 @@ const Comment = (props) => {
                 comment_likes_id: data.id,
               }
             : comment;
+
         }),
-      }));
+         }));
+         console.log("Comments likes count", comment_likes_count);
     } catch (err) {
       console.log(err);
     }
@@ -103,7 +106,9 @@ const Comment = (props) => {
       console.log(err);
     }
   };
-
+//   if (!comment_likes_count) {
+//     return null;
+//   }
   return (
     <>
       <hr />

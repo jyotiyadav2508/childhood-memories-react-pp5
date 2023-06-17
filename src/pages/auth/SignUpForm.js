@@ -28,7 +28,7 @@ const SignUpForm = () => {
   const { username, password1, password2 } = signUpData;
   const [errors, setErrors] = useState({});
 
-  const history = useHistory();
+  const history = useHistory();  // to link to next page
 
   const handleChange = (event) => {
     setSignUpData({
@@ -36,6 +36,11 @@ const SignUpForm = () => {
       [event.target.name]: event.target.value,
     });
   };
+/**
+ * Provides data to API
+ * Redirects the user to signin page
+ * Displays Error messages upon invalid data inputs
+ */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

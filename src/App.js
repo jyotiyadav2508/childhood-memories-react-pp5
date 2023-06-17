@@ -20,6 +20,7 @@ import { useCurrentUser } from "./contexts/CurrentUserContext";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -113,7 +114,7 @@ function App() {
                 render={() => <ProfileEditForm />}
               />
 
-              <Route render={() => <p>Page not found!</p>} />
+            <Route render={() => <PageNotFound />} />
             </Switch>
           )}
         </Container>

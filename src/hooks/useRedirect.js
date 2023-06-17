@@ -2,6 +2,11 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
+/**
+ * Checks the user login status with refresh token
+ * Redirects user to the homepage
+ * Credits- CI's Moments walthrough 
+ */
 export const useRedirect = (userAuthStatus) => {
     const history = useHistory();
 

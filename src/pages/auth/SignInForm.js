@@ -20,7 +20,13 @@ import {
   Alert,
 } from "react-bootstrap";
 import { useRedirect } from "../../hooks/useRedirect";
+import { setTokenTimestamp } from '../../utils/utils';
 
+/**
+* To render SignIn form
+* Followed Moments walkthrough was used as a guidance
+* To create variables, data handling and error handling code
+*/
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
   useRedirect("loggedIn");
@@ -45,7 +51,8 @@ function SignInForm() {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
-      history.goBack();
+      setTokenTimestamp(data);
+      history.push("/");
     } catch (err) {
       setErrors(err.response?.data);
     }

@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { DropdownMenu } from "../../components/DropdownMenu";
+// import DeleteConfirmation from "../../components/DeleteConfirmationModal";
 
 /**
  * Renders a selected Post object from the API
@@ -52,7 +53,6 @@ const Post = (props) => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
       setShowAlert(true);
-
       setTimeout(function () {
         history.goBack();
       }, 1500);
