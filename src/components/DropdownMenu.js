@@ -1,10 +1,14 @@
 import React from "react";
+// import { Modal, Button } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/DropdownMenu.module.css";
-import { useHistory } from "react-router";
+import { useHistory} from "react-router";
+// import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
+
+
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   <i
     className="fas fa-ellipsis-v"
@@ -16,7 +20,9 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const DropdownMenu = ({ handleEdit, handleDelete }) => {
+
+
+export const DropdownMenu = ({ handleEdit, handleDeleteClick}) => {
   return (
     <Dropdown className="ml-3" drop="left">
       <Dropdown.Toggle as={ThreeDots} />
@@ -34,7 +40,8 @@ export const DropdownMenu = ({ handleEdit, handleDelete }) => {
         </Dropdown.Item>
         <Dropdown.Item
           className={styles.DropdownItem}
-          onClick={handleDelete}
+          onClick={handleDeleteClick}
+        // onclick={handleDelete}
           aria-label="delete"
         >
           <i className="fas fa-trash-alt" />

@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { DropdownMenu } from "../../components/DropdownMenu";
-// import DeleteConfirmation from "../../components/DeleteConfirmationModal";
+import DeleteModal from "../../components/DeleteModal";
 
 /**
  * Renders a selected Post object from the API
@@ -28,6 +28,7 @@ const Post = (props) => {
     postPage,
     setPosts,
   } = props;
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   /**
    * For user authentication
@@ -59,7 +60,14 @@ const Post = (props) => {
     } catch (err) {
       // console.log(err);
     }
+    setShowDeleteModal(false);
   };
+  const handleCancel=()=>{
+    setShowDeleteModal(false);
+  }
+  const handleDeleteClick=() =>{
+    setShowDeleteModal(true);
+  }
 
   /**
    * To like a post by the user
@@ -119,9 +127,12 @@ const Post = (props) => {
             {is_owner && postPage && (
               <DropdownMenu
                 handleEdit={handleEdit}
-                handleDelete={handleDelete}
+                handleDeleteClick={handleDeleteClick}
               />
             )}
+            {showDeleteModal && (
+                    <DeleteModal onDelete={handleDelete} onCancel={handleCancel} />
+                  )}
           </div>
         </Media>
       </Card.Body>
