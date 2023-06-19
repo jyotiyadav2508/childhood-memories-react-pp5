@@ -1,100 +1,328 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Childhood Memories - Front End
 
-Welcome,
+ ![Screenshot of Am I Responsive](screenshot-here)
 
-This is the Code Institute student template for React apps on the Codeanywhere IDE. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+ ## PERSPECTIVE
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **19th April, 2023**
+ >There always comes a moment in our life when we wish we could go back to our childhood. Not to change anything, but to feel something twice.
+ Childhood is the best of all the seasons of life, and the longer it lasts with happy memories, the stronger the emotional stability in adulthood. Recalling happy memories elicits positive feelings and enhances one’s wellbeing. They strengthen our sense of identity and purpose and bond our relationships. The main motive of this website is to recalling and sharing some of most precious childhood memories and heal our inner child. 
 
-## Codeanywhere Reminders
+ **Childhood Memories** is a social-media website designed to mimic the features of Twitter. Users can create an account, log in, make a post, make comments on posts, like other users' posts and comments, and change their profile photo and profile biography. This website is designed to allow users to make posts about incomparable memories from their childhood, and be able to engage with other users by commenting and liking on other posts/comments. This is the repository for the React frontend of Childhood Memories, created with HTML, CSS, Bootstrap, React. Components were reused throughout the React project as each part of the website was broken into individual components and linked together, transferring states and data. The project also utilises a Django Rest Framework web API.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+ ## Deployed Link
 
-To log into the Heroku toolbelt CLI:
+- [Front-End Deployed Link]()
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Back End Links
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- [Back End Deployed Link](https://childhood-memories.herokuapp.com/)
+- [Back End GitHub](https://github.com/jyotiyadav2508/childhood-memories-drf-api)
 
----
+## [Contents](#contents)
+- [User Experience (UX)](#user-experience-ux)
+	- [Site Goals](#site-goals)
+	- [Scope](#scope)
+    - [Kanban Board and MosCow Prioritization](#kanban-board-and-moscow-prioritization)
+    - [Epics and User Stories](<#epics-and-user-stories>)
+        - [Website UI](<#website-ui>)
+        - [Authentication](<#authentication>)
+        - [Navigation](<#navigation>)
+		- [General](<#general>)
+		- [Post Management](<#post-management>)
+        - [Comment Management](<#comment-management>)
+        - [Likes Management](<#likes-management>)
+        - [Profile Management](<#profile-management>)
+    - [Acceptance Criteria](<#acceptance-criteria>)
+	- [Tasks](<#tasks>)
+	- [User Story Management](<#user-story-management>)
+        - [Sprints](#sprints)
+- [Design](<#design>)
+	- [Colours](<#colours>)
+	- [Typography](<#typography>)
+	- [Imagery](<#imagery>)
+	- [Wireframes](<#wireframes>)
+- [Features](<#features>)
+- [Components](<#components>)
+- [Technologies](<#technologies>)
+	- [Languages Used](<#languages-used>)
+	- [Tools](<tools>)
+	- [Frameworks, Libraries and Programs](<#frameworks-libraries-and-programs>)
+- [Production](#production)
+- [Issues and Fixes](<#issues-and-fixes>)
+- [Testing](<#testing>)
+	- [User Story Testing](<#user-story-testing>)
+	- [Testing Technologies](<#testing-technologies>)
+	- [Manual Testing](<#manual-testing>)
+	- [Validation](<#validation>)
+	- [Browser Compatibility](<#browser-compatibility>)
+- [Deployment](<#deployment>)
+	- [Heroku](<#heroku>)
+- [Credits and Resources](<#credits-and-resources>)
+	- [Code](<#code>)
+	- [Learning Resources](<#learning-resources>)
+	- [Content](<#content>)
+	- [Media](<#media>)
+- [Acknowledgements](<#acknowledgements>)
 
-Happy coding!
 
-# Getting Started with Create React App
+## User Experience (UX)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Site Goals
+- **Childhood Memories** is a social-media website designed to mimic the features of Twitter.
+- User can create an account, log in, make posts about incomparable memories from their childhood, and be able to engage with other users by commenting and liking on other posts/comments. Also user can change their profile photo and profile biography.
+- The basic goal is to re-live the happy moments of your childhood and provide a happy mood to the users.
+- Users can enable the network using this social media platform.
 
-## Available Scripts
+### Scope
 
-In the project directory, you can run:
+- An attractive and intuitive UX experience: 
+	1. Website title that gives an idea what is it about
+	2. Hero-image with information on the site's purpose
+	3. Responsive design across all devices
+	4. A clear and straightforward layout
+	5. Footer with links to social media
+	6. Implement alert messages to provide users with more feedback after they take certain actions
+	7. Fast application that is easy to use
+	8. Show user's profile image in the profile section
 
-### `npm install`
+- An easy navigation for the user through all the pages and features
+	1. Navigation Menu with easy access to all links.
+	2. Easy Sign Up/ Sign In/ Sign Out functionality visible.
+	3. Posts list with infinite scroll feature
+	4. Landing page with guidance to sign up/sign in and how to start using the websites features
+	6. Search field to enable user to search a keyword
+	7. Category filter for easy sorting of posts
+	8. User's Feed page with posts from their favourite users
+	9. Liked page to enable users to save the posts they liked
 
-Installs the required npm packages.
+- Posts and Comment Features
+	1. Latest entries feature on top or first
+	2. Click on post to view post details 
+	3. Ability to comment and like a posts
+    4. Ability to like a comment
+	5. Create, Edit and Delete own post and comment.
 
-### `npm start`
+- Profiles Features
+	1. Shows username and Avatar, enlists posts made by the user
+	2. Shows information on Followers and other users following
+	3. Password change option
+	4. Profile edit option
 
-Runs the app in the development mode.\
-Open port 3000 to view it in the browser.
+[Back to top ⇧](#contents)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Kanban Board and MosCow Prioritization
 
-### `npm test`
+I used a kanban board to help organize the user stories and tasks required for this project. When each task was in progress, they would be dragged to the 'in progress' column. When they were completed, they were dragged to the 'done' column. I also utilized MoSCoW prioritization by labelling each task as Must Have, Should Have and Could Have. I prioritized finishing the Must Have tasks first and then worked on the Should Have tasks. I managed to complete all of the tasks in the end and all user stories are successfully covered.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Epics and User Stories
+8 Epics were created which were further developed into 34 User Stories.Many of the user stories are worded similarly to the Moments walkthrough project because the functionality is quite similar - especially with navigation and authentication, posts, likes and comments.
 
-### `npm run build`
+### 1. Website UI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Epic Goals for End User**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. A landing page that describes the purpose of the website
+2. User guidance to get started 
+3. Easy register/sign up and sign in options
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Related User Stories**
 
-### `npm run eject`
+- As a **site user** I can **capability** so that **I can easily understand the purpose and main features of the website**
+- As a **site user** I can **see well written instructions on how to get started** so that **I can easily get information about how to start use the web application**
+- As a **site user** I can **see sign up and sign in to the site** so that **I can easily register or sing in to access the functionality of website.**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Authentication
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Epic Goals for End User**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Access to Sign Up and Sign In Features
+2. Access to Sign Out option
+3. Access tokens
+4. Access to Changing Posts/Comments/Liking
+5. Not Liking Own Posts/Comments
+6. Not following self
 
-## Learn More
+**Related User Stories**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- As a **site user** I can **sign up and sign in to the site** so that **I can access the functionality of website.**
+- As a **site user** I can **easily log out** so that **I can have more security on my account.**
+- As a **site user** I can **maintain my logged-in status until I choose to log out** so that **my user experience is not compromised**
+- As a **site user** I cannot **edit/delete any posts/comments/likes that are not mine** so that **I can be assured that my posts/comments/likes are protected and can only be changed by me.**
+- As a **site user** I can **only like/unlike other users' posts and comments** so that **I can only show my appreciation for other posts/comments and not cheat the system by liking my own posts/comments**
+- As a **user** I can **only follow other users** so that **I cannot cheat the system and follow myself and gain myself a new, false follower.**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Navigation
 
-### Code Splitting
+**Epic Goals for End User**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. An easy to use navigation 
+2. Home page with posts list with infinite scroll visible to all
+3. Navigation routing
+4. Navigation conditional rendering
+5. 404 page
 
-### Analyzing the Bundle Size
+**Related User Stories**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- As a **site user** I can **see a navigation bar on every page** so that **I can easily return to pages I wish to visit.**
+- As a **site user** I can **infinitely scroll down to see more posts and also to see more comments** so that **I can consistently look at more posts/comments without having to click any extra links to view more.**
+- As a **site user** I can **navigate through pages quickly** so that **I can view content smoothly without the pages being refreshed**
+- As a **site user** I can **have the navigation bar customed to my logged-in or out status** so that **I can have the options to log in or sign up when logged out, or have the options to create a post, view my profile, sign out, etc when logged in.**
+- As a **site user** I can **a nice 404 page consistent with the site layout** so that **I can be communicated with if I have reached an invalid web page.** 
 
-### Making a Progressive Web App
+### 4. General
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Epic Goals for End User**
 
-### Advanced Configuration
+1. Search bar
+2. Confirmation messages
+3. About page
+4. Category filter
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Related User Stories**
 
-### Deployment
+- As a **site user** I can **search for posts or users in a search box** so that **I can quickly find specific posts or users that I am wanting to look for.**
+- As a **site user** I can **always be notified when my interactions on the website are successful (creating posts/comments, liking/unliking posts, unfollowing/following users, logging in/out, etc** so that **I will always be informed of my actions and whether they are successful or not.**
+- As a **site user** I can **easily find the 'About' link** so that **I can learn about the purpose of this website which will be crucial as a new user coming to the website**
+- As a **site user** I can **view post category options** so that **I choose posts to display that I’m particularly interested in.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 5. Post Management
 
-### `npm run build` fails to minify
+**Epic Goals for End User**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Post visibility
+2. Post Details visibility
+3. Post Creation Option
+4. Post update Option
+5. User's Feed page
+
+**Related User Stories**
+ - As a **site user** I can **view all the posts on the Homepage** so that **I can view, like and comment those post**
+ - As a **site user** I can **view and read the detailed post page of all of the site users** so that **I can view the comments made by different users**
+ - As a **site user** I can **create posts** so that **I can share my memories with others**
+ - As a **site user** I can **edit/delete my posts** so that **I can make changes to existing post information or remove my content**
+ - As a **site user** I can **view all the posts on the User's Feed page** so that **I can see all the posts posted by the people whom I follow**
+
+ ### 6. Comment Management
+
+**Epic Goals for End User**
+
+1. Comments visibility
+2. Comments Creation Option
+3. Comments update Option
+4. Comments Delete Option
+
+**Related User Stories**
+
+- As a **site user** I can **read comments on a post** so that **I can read what others think about the post and read the discussion happening.**
+- As a **site user** I can **post a comment on a post** so that **I can contribute discussion to a post or share my thoughts about a post**
+- As a **site user** I can **edit/delete my comments** so that **I have the possibility to remove or add more details to my existing comments.**
+
+### 7. Likes Management
+
+**Epic Goals for End User**
+
+1. Like visibility
+2. Like/Unlike a post
+3. Like/Unlike a comment
+
+**Related User Stories**
+
+- As a **site user** I can **see the post that have received most number of likes** so that **I can assess which are the best ones.**
+- As a **site user** I can **like a post** so that **I can share my appreciation for the post and show the author that their post is great.**
+- As a **site user** I can **remove likes on a post** so that **I can show that my opinion has changed**
+- As a **site user** I can **like/unlike comments** so that **I can share my feelings towards a comment.**
+
+### 8. Profile Management
+
+**Epic Goals for End User**
+
+1. Profile visibility
+2. Profile following/ unfollowing user
+3. Profile update option
+4. Profile popularity assessment
+
+
+**Related User Stories**
+
+- As a **site user** I can **view a detailed page of users** so that **I can see their posts and learn more about the user. I can also see their following count, followers count, etc.**
+- As a **site user** I can **follow or unfollow other users** so that **I can see or choose to remove posts by specific users in my posts feed**
+- As a **site user** I can **see the most popular profiles** so that **I can see who has the most interesting posts**
+- As a **site user** I can **update my own data** so that **I can make changes as needed**
+
+
+### Tasks
+The tasks for the website development process was closely followed as mentioned in CI's Advanced Frontend React module "I Moments" walkthrough project. The task is generally the developers step towards preparing the app.
+The tasks that I have followed during the development phase were carried out in this order.
+
+**Before Project Inception**
+
+- Design Entity Relationship Diagram 
+- Set up and create  Back End API. For this backend was built using the Django Rest API framework. All information can be found in [Childhood memories Back End](https://github.com/jyotiyadav2508/childhood-memories-drf-api)
+- Create Project, Epics, User Stories and prepare Kanban Board
+
+**Creation of Project in Codeanywhere**
+- Set up ReactJS project
+- Install dependencies
+- Coding
+- Testing
+- Create Frontend Repository in GitHub
+
+[Back to top ⇧](#contents)
+
+
+## Technologies
+
+### Languages Used
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [React JSX](https://reactjs.org/docs/introducing-jsx.html)
+
+### Tools
+
+- [Balsamiq](https://balsamiq.com/)- to create the wireframes for the project
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) - for debugging of the code and checking site responsiveness
+- [LICEcap](https://www.cockos.com/licecap/) - to generate gif files for testing all the features of the app
+- [Cloudinary](https://cloudinary.com/) - to store static files
+- [Coolors](https://coolors.co/?home) - for color palette
+- [Favicon.io](https://favicon.io) - to generate the site favicon
+- [Font Awesome](https://fontawesome.com/) - Icons from Font Awesome, used in NavBar and create buttons, like and comment icons
+- [Google Fonts](https://fonts.google.com/) - import font
+- [Git](https://git-scm.com/) - for version control within VSCode to push the code to GitHub
+- [GitHub](https://github.com/) - for remote repository to store project code
+- [Gitpod](https://gitpod.io) - to host a virtual workspace
+- Validation:
+  - [W3C Validator](https://validator.w3.org/) was used to validate the html
+  - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) was used to validate the css
+  - [ESLint](https://eslint.org/) used to validate JSX code
+
+### Frameworks, Libraries and Programs
+
+**Frameworks and Libraries**
+- [React Bootstrap4](https://react-bootstrap-v4.netlify.app/) - for styling the site and site responsiveness across various devices
+- [ReactJS](https://reactjs.org/) - to build the functionality of the site
+- [Font Awesome](https://fontawesome.com/) - to add various icons to the site
+- [Axios](https://axios-http.com/docs/intro) - used for promise-based HTTP. axios was used to send API requests from the React project to the be_inspired_drf_api and avoid any CORS errors when sending cookies.
+- [JWT](https://jwt.io/) - library to decode out JSON Web token. JWT prevents unauthenticated user from making extra network requests to refresh their access token. It is also used to remove the timestamp from the browser when the user refreshes token expires or the user logs out.
+- [Popper](https://popper.js.org/) - a 3rd party library used by React-Bootstrap to make sure the dropdown menus position is fixed on all browsers.
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - to enable component to load content (posts, recommendations and comments) automatically as the user scrolls towards the bottom of the page without having to jump to next/previous page.
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - used for dynamic routing. This library enables the navigation among views of various components and control what the user can see depending on the URL they have accessed in the browser.
+
+[Back to top ⇧](#contents)
+
+## Production
+
+Installations:
+
+- React library - using the command `npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm`
+For the React project set up
+- react-bootstrap - using the command `npm install react-bootstrap@1.6.3 bootstrap@4.6.0`
+This is used to render the layout and styling of the website. The library makes it easy to create and use standard interface elements that are responsive.
+- react-router-dom - using the command `npm install react-router-dom@5.3.0`
+ This library makes the site navigation easier without the need to refresh the page. In social media sites ith mutiple components, it provides a quick and responsive user experience.
+- axios - installed using command `npm install axios`.It manages the calls to the backend database. Simplifies the API requestsand the included interceptors refresh JSON Web Tokens which the site uses.
+- infinite-scroll-component - installed using command ` npm install react-infinite-scroll-component`.
+It is used to enable infinite scrolling on the Posts and Recommendations components and on comments. Infinite scrolling is a standard feature in all social media sites.
+- jwt decode - Using command `npm install jwt-decode`. Used to remove requests to refresh an access token for signed out users. It enables the refresh token to be decoded so that a timestamp can be put in local storage, if a timestamp does not exist in the user's local storage then access refresh requests will not be made.
+
