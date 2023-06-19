@@ -22,9 +22,8 @@
 - [User Experience (UX)](#user-experience-ux)
 	- [Site Goals](#site-goals)
 	- [Scope](#scope)
-    - [Kanban Board and MosCow Prioritization](#kanban-board-and-moscow-prioritization)
     - [Epics and User Stories](<#epics-and-user-stories>)
-        - [Website UI](<#website-ui>)
+    	- [Website UI](<#website-ui>)
         - [Authentication](<#authentication>)
         - [Navigation](<#navigation>)
 		- [General](<#general>)
@@ -32,6 +31,9 @@
         - [Comment Management](<#comment-management>)
         - [Likes Management](<#likes-management>)
         - [Profile Management](<#profile-management>)
+    - [Agile Development](<#agile-development>)
+        - [Kanban Board and MosCow Prioritization](#kanban-board-and-moscow-prioritization)
+        - [Outline of Sprints](<#outline-of-sprints>)
     - [Acceptance Criteria](<#acceptance-criteria>)
 	- [Tasks](<#tasks>)
 	- [User Story Management](<#user-story-management>)
@@ -110,10 +112,6 @@
 
 [Back to top ⇧](#contents)
 
-### Kanban Board and MosCow Prioritization
-
-I used a kanban board to help organize the user stories and tasks required for this project. When each task was in progress, they would be dragged to the 'in progress' column. When they were completed, they were dragged to the 'done' column. I also utilized MoSCoW prioritization by labelling each task as Must Have, Should Have and Could Have. I prioritized finishing the Must Have tasks first and then worked on the Should Have tasks. I managed to complete all of the tasks in the end and all user stories are successfully covered.
-
 ## Epics and User Stories
 8 Epics were created which were further developed into 34 User Stories.Many of the user stories are worded similarly to the Moments walkthrough project because the functionality is quite similar - especially with navigation and authentication, posts, likes and comments.
 
@@ -138,7 +136,7 @@ I used a kanban board to help organize the user stories and tasks required for t
 
 1. Access to Sign Up and Sign In Features
 2. Access to Sign Out option
-3. Access tokens
+3. Refressing access tokens
 4. Access to Changing Posts/Comments/Liking
 5. Not Liking Own Posts/Comments
 6. Not following self
@@ -250,6 +248,64 @@ I used a kanban board to help organize the user stories and tasks required for t
 - As a **site user** I can **see the most popular profiles** so that **I can see who has the most interesting posts**
 - As a **site user** I can **update my own data** so that **I can make changes as needed**
 
+## Agile Development
+
+An Agile approach was used to manage the completion of this project. Specifically, this meant breaking the project down into smaller tasks with a focus on minimum functionality first. Only when a minimally viable product is ready will extra features be added. In addition, GitHub projects and Issues were used a tool to keep track of the tasks.
+
+What does minimally functioning mean in this context? As with any project, there are real constraints (time, energy, know-how) that force a developer to prioritize the work. Based on my abilities and constraints, I have prioritized the project requirements in the following way:
+
+A functioning front-end with authentication, registration, CRUD operations for a Post and Comment. The focus is on working code.
+Implementation of code for adding likes and comments to a Post.
+Aesthetics/Design - This is of course important in an advanced front end project, but the goal here is to have just minimal styling at first and then as time permits improve the visual design.
+
+### Kanban Board and MosCow Prioritization
+
+I used a kanban board to help organize the user stories and tasks required for this project. When each task was in progress, they would be dragged to the 'in progress' column. When they were completed, they were dragged to the 'done' column. I also utilized MoSCoW prioritization by labelling each task as Must Have, Should Have and Could Have. I prioritized finishing the Must Have tasks first and then worked on the Should Have tasks. I managed to complete all of the tasks in the end and all user stories are successfully covered.
+
+### Outline of Sprints
+The following is an outline of the sprints that were done during the completion of this project.
+
+#### Sprint 1 - Project Setup
+
+Goal: Project environment, authentication functionality.Minimum styling Time: Three Day
+
+  - Setup project
+  - Install additional libraries
+  - Write User Stories
+  - Setup minimal navbar with routing
+  - Design minimal sign in and sign up forms
+  - Connect sign in and sign up to backend
+  - Fix hamburger toggle
+  - Access and refresh tokens
+
+#### Sprint 2 - Making a Post
+Goal: Users can see posts on home page and add a post. Minimal styling Time: Three Days
+
+  - Design content page
+  - Connect to backed to display current posts
+  - Design Post form
+  - Create a Post
+  - Display a Post
+  - Like a Post
+  - Add links to navbar
+
+#### Sprint 3 - Likes, Comments and Profile page
+Goal: Users can add a comment and like a post and comment. Users can see the posts they've liked. Time: Seven Days
+
+  - Add feed and liked link to navbar for logged in user
+  - Add filter by like
+  - Add filter by category
+  - Add edit and delete function for Post.
+  - Design add comment form
+  - Add, delete, update, and display comments.
+  - Add like functionality on comment
+  - Create Profile page header which include profile Image, name, follow button
+  - Create basic popular profiles component
+  - Create follow, unfollow functionality for profiles
+  - Update profile page
+
+#### Sprint 4 - Landing Page,General
+Goal: Adjust layout and basic styles for components Time: Two Days
 
 ### Tasks
 The tasks for the website development process was closely followed as mentioned in CI's Advanced Frontend React module "I Moments" walkthrough project. The task is generally the developers step towards preparing the app.
