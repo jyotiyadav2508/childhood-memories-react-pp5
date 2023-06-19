@@ -1,11 +1,11 @@
 # Childhood Memories - Front End
 
- ![Screenshot of Am I Responsive](screenshot-here)
-
  ## PERSPECTIVE
 
  >There always comes a moment in our life when we wish we could go back to our childhood. Not to change anything, but to feel something twice.
  Childhood is the best of all the seasons of life, and the longer it lasts with happy memories, the stronger the emotional stability in adulthood. Recalling happy memories elicits positive feelings and enhances one’s wellbeing. They strengthen our sense of identity and purpose and bond our relationships. The main motive of this website is to recalling and sharing some of most precious childhood memories and heal our inner child. 
+
+ ![Screenshot of Am I Responsive](screenshot-here)
 
  **Childhood Memories** is a social-media website designed to mimic the features of Twitter. Users can create an account, log in, make a post, make comments on posts, like other users' posts and comments, and change their profile photo and profile biography. This website is designed to allow users to make posts about incomparable memories from their childhood, and be able to engage with other users by commenting and liking on other posts/comments. This is the repository for the React frontend of Childhood Memories, created with HTML, CSS, Bootstrap, React. Components were reused throughout the React project as each part of the website was broken into individual components and linked together, transferring states and data. The project also utilises a Django Rest Framework web API.
 
@@ -23,21 +23,19 @@
 	- [Site Goals](#site-goals)
 	- [Scope](#scope)
     - [Epics and User Stories](<#epics-and-user-stories>)
-    	- [Website UI](<#website-ui>)
-        - [Authentication](<#authentication>)
-        - [Navigation](<#navigation>)
-		- [General](<#general>)
-		- [Post Management](<#post-management>)
-        - [Comment Management](<#comment-management>)
-        - [Likes Management](<#likes-management>)
-        - [Profile Management](<#profile-management>)
-    - [Agile Development](<#agile-development>)
+	    - [Website UI](#website-ui)
+        - [Authentication](#authentication)
+        - [Navigation](#navigation)
+		- [General](#general)
+		- [Post Management](#post-management)
+        - [Comment Management](#comment-management)
+        - [Likes Management](#likes-management)
+        - [Profile Management](#profile-management)
+    - [Agile Development](#agile-development)
         - [Kanban Board and MosCow Prioritization](#kanban-board-and-moscow-prioritization)
         - [Outline of Sprints](<#outline-of-sprints>)
     - [Acceptance Criteria](<#acceptance-criteria>)
 	- [Tasks](<#tasks>)
-	- [User Story Management](<#user-story-management>)
-        - [Sprints](#sprints)
 - [Design](<#design>)
 	- [Colours](<#colours>)
 	- [Typography](<#typography>)
@@ -243,6 +241,8 @@
 - As a **site user** I can **see the most popular profiles** so that **I can see who has the most interesting posts**
 - As a **site user** I can **update my own data** so that **I can make changes as needed**
 
+[Back to top ⇧](#contents)
+
 ## Agile Development
 
 An Agile approach was used to manage the completion of this project. Specifically, this meant breaking the project down into smaller tasks with a focus on minimum functionality first. Only when a minimally viable product is ready will extra features be added. In addition, GitHub projects and Issues were used a tool to keep track of the tasks.
@@ -256,6 +256,21 @@ Aesthetics/Design - This is of course important in an advanced front end project
 ### Kanban Board and MosCow Prioritization
 
 I used a kanban board to help organize the user stories and tasks required for this project. When each task was in progress, they would be dragged to the 'in progress' column. When they were completed, they were dragged to the 'done' column. I also utilized MoSCoW prioritization by labelling each task as Must Have, Should Have and Could Have. I prioritized finishing the Must Have tasks first and then worked on the Should Have tasks. I managed to complete all of the tasks in the end and all user stories are successfully covered.
+
+<details>
+<summary>Screenshot of MoSCoW Prioritization Part 1</summary>
+<img src='documentation/moscow-1.png' alt='moscow part 1'>
+</details>
+
+<details>
+<summary>Screenshot of MoSCoW Prioritization Part 2</summary>
+<img src='documentation/moscow-2.png' alt='moscow part 2'>
+</details>
+
+<details>
+<summary>Screenshot of MoSCoW Prioritization Part 3</summary>
+<img src="documentation/moscow-3.png" alt='moscow part 3'>
+</details>
 
 ### Outline of Sprints
 The following is an outline of the sprints that were done during the completion of this project.
@@ -306,6 +321,8 @@ Goal: Adjust layout and basic styles for components
   - Add footer
   - Configure layouts
 
+[Back to top ⇧](#contents)
+
 ### Tasks
 The tasks for the website development process was closely followed as mentioned in CI's Advanced Frontend React module "I Moments" walkthrough project. The task is generally the developers step towards preparing the app.
 The tasks that I have followed during the development phase were carried out in this order.
@@ -326,6 +343,21 @@ The tasks that I have followed during the development phase were carried out in 
 ### Future Task
 
 [Back to top ⇧](#contents)
+
+## Design
+
+### Colours
+The colour scheme has considered based on easy accessibility for all.
+Complimentarity was key feature in color selection, to give it a pleasant feel for all age groups.
+The palette was generated with inspiration from palettes provided by [Coolers](https://coolors.co/). The color palette used is as shown below.
+
+### Typography
+Fonts were imported using Google Fonts. Font "'Fredoka One', cursive" was used throughout with a backup of 'Raleway', sans-serif'. It was chosen for easy readability for users.
+
+### Imagery
+The imagery on the website has been seleced according to the post requirement. Many images were taken from Pexels.
+
+### Wireframes
 
 
 ## Technologies
@@ -423,3 +455,5 @@ This application has been deployed from GitHub to Heroku by following the steps 
 - Thank you to Tutor Support for always being there for me, and always being patient with my questions.
 
 - Thank you to CI Slack Channel for taking time out of their day to answer my questions.
+
+[Back to top ⇧](#contents)
