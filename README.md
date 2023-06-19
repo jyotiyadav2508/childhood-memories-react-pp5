@@ -44,7 +44,6 @@
 	- [Imagery](<#imagery>)
 	- [Wireframes](<#wireframes>)
 - [Features](<#features>)
-- [Components](<#components>)
 - [Technologies](<#technologies>)
 	- [Languages Used](<#languages-used>)
 	- [Tools](<tools>)
@@ -60,10 +59,6 @@
 - [Deployment](<#deployment>)
 	- [Heroku](<#heroku>)
 - [Credits and Resources](<#credits-and-resources>)
-	- [Code](<#code>)
-	- [Learning Resources](<#learning-resources>)
-	- [Content](<#content>)
-	- [Media](<#media>)
 - [Acknowledgements](<#acknowledgements>)
 
 
@@ -266,7 +261,6 @@ I used a kanban board to help organize the user stories and tasks required for t
 The following is an outline of the sprints that were done during the completion of this project.
 
 #### Sprint 1 - Project Setup
-
 Goal: Project environment, authentication functionality.Minimum styling Time: Three Day
 
   - Setup project
@@ -294,7 +288,6 @@ Goal: Users can add a comment and like a post and comment. Users can see the pos
 
   - Add feed and liked link to navbar for logged in user
   - Add filter by like
-  - Add filter by category
   - Add edit and delete function for Post.
   - Design add comment form
   - Add, delete, update, and display comments.
@@ -304,8 +297,14 @@ Goal: Users can add a comment and like a post and comment. Users can see the pos
   - Create follow, unfollow functionality for profiles
   - Update profile page
 
-#### Sprint 4 - Landing Page,General
-Goal: Adjust layout and basic styles for components Time: Two Days
+#### Sprint 4 - General feature, styling and deployment 
+Goal: Adjust layout and basic styles for components
+
+  - Intuitive landing page
+  - About page
+  - Add filter by category
+  - Add footer
+  - Configure layouts
 
 ### Tasks
 The tasks for the website development process was closely followed as mentioned in CI's Advanced Frontend React module "I Moments" walkthrough project. The task is generally the developers step towards preparing the app.
@@ -323,6 +322,8 @@ The tasks that I have followed during the development phase were carried out in 
 - Coding
 - Testing
 - Create Frontend Repository in GitHub
+
+### Future Task
 
 [Back to top ⇧](#contents)
 
@@ -355,15 +356,13 @@ The tasks that I have followed during the development phase were carried out in 
 
 ### Frameworks, Libraries and Programs
 
-**Frameworks and Libraries**
-- [React Bootstrap4](https://react-bootstrap-v4.netlify.app/) - for styling the site and site responsiveness across various devices
-- [ReactJS](https://reactjs.org/) - to build the functionality of the site
-- [Font Awesome](https://fontawesome.com/) - to add various icons to the site
-- [Axios](https://axios-http.com/docs/intro) - used for promise-based HTTP. axios was used to send API requests from the React project to the be_inspired_drf_api and avoid any CORS errors when sending cookies.
-- [JWT](https://jwt.io/) - library to decode out JSON Web token. JWT prevents unauthenticated user from making extra network requests to refresh their access token. It is also used to remove the timestamp from the browser when the user refreshes token expires or the user logs out.
-- [Popper](https://popper.js.org/) - a 3rd party library used by React-Bootstrap to make sure the dropdown menus position is fixed on all browsers.
-- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - to enable component to load content (posts, recommendations and comments) automatically as the user scrolls towards the bottom of the page without having to jump to next/previous page.
-- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - used for dynamic routing. This library enables the navigation among views of various components and control what the user can see depending on the URL they have accessed in the browser.
+- [React Bootstrap4](https://react-bootstrap-v4.netlify.app/) - For styling the site and site responsiveness across various devices
+- [ReactJS](https://reactjs.org/) - To build the functionality of the site
+- [Axios](https://axios-http.com/docs/intro) - Used for promise-based HTTP. axios was used to send API requests from the React project to the be_inspired_drf_api and avoid any CORS errors when sending cookies.
+- [JWT](https://jwt.io/) - A library to decode out JSON Web token. JWT prevents unauthenticated user from making extra network requests to refresh their access token. It is also used to remove the timestamp from the browser when the user refreshes token expires or the user logs out.
+- [Popper](https://popper.js.org/) - A 3rd party library used by React-Bootstrap to make sure the dropdown menus position is fixed on all browsers.
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - To enable component to load content (posts, recommendations and comments) automatically as the user scrolls towards the bottom of the page without having to jump to next/previous page.
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - Used for dynamic routing. This library enables the navigation among views of various components and control what the user can see depending on the URL they have accessed in the browser.
 
 [Back to top ⇧](#contents)
 
@@ -382,3 +381,45 @@ This is used to render the layout and styling of the website. The library makes 
 It is used to enable infinite scrolling on the Posts and Recommendations components and on comments. Infinite scrolling is a standard feature in all social media sites.
 - jwt decode - Using command `npm install jwt-decode`. Used to remove requests to refresh an access token for signed out users. It enables the refresh token to be decoded so that a timestamp can be put in local storage, if a timestamp does not exist in the user's local storage then access refresh requests will not be made.
 
+
+## Deployment
+
+### Heroku
+
+This application has been deployed from GitHub to Heroku by following the steps (these are steps after you have set up the front end project in the Config Vars of the back end project):
+
+1. Create or log in to your account on [Heroku.com](https://www.heroku.com/).
+2. Create a new app, add app name and choose your region.
+3. Click on create app.
+4. In Terminal of your project, push your changes to GitHub.
+5. Log in to Heroku.com and open the dashboard for your react application (for the front end).
+6. Click on the 'Deploy' tab and go to 'Deployment Method' and choose GitHub
+7. Navigate to 'App connected to GitHub' and search for the relevant repository
+8. Select the repository you wish to deploy and click 'Connect'
+9. Scroll down to the bottom and then select “Manual deploy”, and choose your repository. 
+10. Wait for your build to complete.
+11. When you see the message “deployed to Heroku” in the build log, click the “open app” button at the top of the page.
+
+### Connecting to API
+
+ - Navigate to the Heroku app for Be-Inspired_DRF_API project and under the 'Settings' tab add the following config vars: Key: Client_Origin and Key: Client_Origin_Dev 
+- Ensure that the trailing '/' of the value of these key is removed from the end of both links and save the config vars.
+- Install the Axios package, and create the supporting axiosDefaults.js file
+
+### Final Deployment
+
+
+## Credits and Resources
+
+- [Code Institute Moments Project](Solutions)
+    - Functionality of the project credit goes to Code Institute. Comments are made along the project of where code is used from Code Institute's Moments project. 
+
+- [Stack Overflow](https://stackoverflow.com/)
+    - Stack Overflow was referred to many times while trying to debug code. 
+
+
+## Acknowledgements
+
+- Thank you to Tutor Support for always being there for me, and always being patient with my questions.
+
+- Thank you to CI Slack Channel for taking time out of their day to answer my questions.
