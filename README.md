@@ -49,11 +49,6 @@
 - [Production](#production)
 - [Issues and Fixes](<#issues-and-fixes>)
 - [Testing](<#testing>)
-	- [User Story Testing](<#user-story-testing>)
-	- [Testing Technologies](<#testing-technologies>)
-	- [Manual Testing](<#manual-testing>)
-	- [Validation](<#validation>)
-	- [Browser Compatibility](<#browser-compatibility>)
 - [Deployment](<#deployment>)
 	- [Heroku](<#heroku>)
 - [Credits and Resources](<#credits-and-resources>)
@@ -412,6 +407,8 @@ This is used to render the layout and styling of the website. The library makes 
 - infinite-scroll-component - installed using command ` npm install react-infinite-scroll-component`.
 It is used to enable infinite scrolling on the Posts and Recommendations components and on comments. Infinite scrolling is a standard feature in all social media sites.
 - jwt decode - Using command `npm install jwt-decode`. Used to remove requests to refresh an access token for signed out users. It enables the refresh token to be decoded so that a timestamp can be put in local storage, if a timestamp does not exist in the user's local storage then access refresh requests will not be made.
+
+## Testing
 
 
 ## Deployment
