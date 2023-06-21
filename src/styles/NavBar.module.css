@@ -1,10 +1,8 @@
 .NavBar {
-    /* background-color: #FFDB89; */
     background-color:#fa9455;
-    /* background-color:#fae2d3; */
     border: 1px solid #c95106;
-    font-size: 1.3rem;
-    height:80px;
+    font-size: 1.2rem;
+    height:90px;
 }
 .NavLink {
     padding: 10px;
@@ -18,7 +16,7 @@
 color: #2142b2;
 }
 
-@media all and (max-width: 991px) {
+/* @media all and (max-width: 991px) {
     .NavBar {
         font-size: 0.8rem;
         padding-left: 20px;
@@ -31,26 +29,5 @@ color: #2142b2;
     .NavItems {
         font-size: medium;
     }
-}
+} */
 
-@media all and (max-width: 468px) {
-    .NavBarBrand {
-        font-size: x-large;
-        padding-left: 0px;
-    }
-
-
-}
-
-@media all and (max-width: 312px) {
-    .NavBarBrand {
-        font-size: 1.2em;
-    }
-    .NavBarBrand img {
-        width: 30%;
-    }
-    .NavItems {
-        font-size: small;
-        padding-left: 0px;
-    }
-}

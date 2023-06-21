@@ -20,7 +20,7 @@ const LandingPage = () => {
                         <img
                             src={landingImage}
                             className={styles.LandingImage}
-                            alt="Pic with quotes about memory"
+                            alt="Pic with quotes about childhood memory"
                         />
                     </Col>
                     <Col lg={6} sm={12}>

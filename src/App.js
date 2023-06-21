@@ -37,6 +37,8 @@ function App() {
     <div className={styles.App}>
       <>
         <NavBar />
+        {/* <Header/> */}
+        {/* <Sidebar/> */}
         <Container fluid className={styles.Main}>
           {!currentUser ? (
             <Switch>

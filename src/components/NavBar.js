@@ -35,15 +35,15 @@ const NavBar = () => {
     }
   };
 
-  const addPostIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/posts/create"
-    >
-      <i className="far fa-plus-square"></i>Add post
-    </NavLink>
-  );
+//   const addPostIcon = (
+//     <NavLink
+//       className={styles.NavLink}
+//       activeClassName={styles.Active}
+//       to="/posts/create"
+//     >
+//       <i className="far fa-plus-square"></i>Add post
+//     </NavLink>
+//   );
 
   const loggedInIcons = (
     <>
@@ -61,6 +61,13 @@ const NavBar = () => {
       >
         <i className="fas fa-sticky-note"></i>About
       </NavLink>
+      <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/posts/create"
+    >
+      <i className="far fa-plus-square"></i>Add post
+    </NavLink>
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
@@ -82,7 +89,7 @@ const NavBar = () => {
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+        <Avatar src={currentUser?.profile_image} text={currentUser && currentUser.username} height={40} />
       </NavLink>
     </>
   );
@@ -117,7 +124,7 @@ const NavBar = () => {
     <Navbar
       expanded={expanded}
       className={styles.NavBar}
-      expand="md"
+      expand="lg"
       fixed="top"
     >
       <Container fluid>
@@ -131,7 +138,7 @@ const NavBar = () => {
             />
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addPostIcon}
+        {/* {currentUser && addPostIcon} */}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}

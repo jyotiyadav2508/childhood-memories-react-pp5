@@ -169,7 +169,6 @@ The sections below presents an exhaustive list of manual tests done.
 |-------------------------|---------------------|
 | Shows 10 most followed profiles in large devices in right column| **Pass** |
 | It shows first four most followed profiles in the app in medium to small devices| **Pass** |
-| **Pass** |
 | Can be seen in all list and post/profiles/feed/liked details pages| **Pass** |
 | The component displays user avatar, name and follow/unfollow button| **Pass** | 
 | Users are able to follow a specific profile they like and then be able to easily view their posts in the Feed| **Pass** | 
