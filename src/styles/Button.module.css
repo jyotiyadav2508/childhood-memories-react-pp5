@@ -7,6 +7,7 @@
     margin-left: 2px;
     margin-right: 2px;
     min-width: 75px;
+    border:1px solid #ea6715;
   }
   
   .Button:hover {
@@ -41,30 +42,34 @@
   
   .BlueOutline,
   .Blue:hover {
-    /* border: 1px solid #2142b2; */
-    background-color: #ffffff;
+    background-color: #f9e7e7;
     color: #2142b2;
+    border: 1px solid #2142b2;
   }
   
   .Black,
   .BlackOutline:hover {
-    /* background-color: #242a3d;
-    color: white; */
     background-color: #242a3d;
     color: aliceblue;
   }
   
   .Black:hover,
   .BlackOutline {
-    /* background-color: #dadadf;
-    color: #242a3d;
-    border-color: #242a3d; */
     background-color: aliceblue;
     color: #242a3d;
+    border: 1px solid #242a3d;
   }
   
   .Bright {
-    /* background-color: #2ed9ff; */
     background-color: #fa9455;
     color: #2142b2;
+  }
+  @media all and (max-width: 468px) {
+    .Button {
+      padding: 0 7px;
+      margin-bottom:5px;
+      margin-top:5px;
+      font-size: 0.9rem;
+    }
+  
   }

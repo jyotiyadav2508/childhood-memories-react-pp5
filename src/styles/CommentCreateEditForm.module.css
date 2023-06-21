@@ -3,18 +3,20 @@
     border: 1px #00d1ff solid;
   }
   
-  /* .Button {
+  .Button {
     border: none;
     background-color: #fa9455;
+    border: 1px solid #b45f2a;
     color: #542204;
     border-radius: 100px;
     padding: 4px 10px;
     min-width: 75px;
     margin: 5px;
-  } */
+  }
   
-  /* .Button:hover {
+ .Button:hover {
     cursor: pointer;
-    background-color: aliceblue;
-    color: #242a3d;
-  } */
+    background-color: #5e82f6 !important;
+    
+    color: white;
+  } 

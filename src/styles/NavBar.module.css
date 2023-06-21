@@ -17,3 +17,40 @@
 .Active i {
 color: #2142b2;
 }
+
+@media all and (max-width: 991px) {
+    .NavBar {
+        font-size: 0.8rem;
+        padding-left: 20px;
+    }
+    .NavLink i{
+        font-size: small;
+    }
+    
+
+    .NavItems {
+        font-size: medium;
+    }
+}
+
+@media all and (max-width: 468px) {
+    .NavBarBrand {
+        font-size: x-large;
+        padding-left: 0px;
+    }
+
+
+}
+
+@media all and (max-width: 312px) {
+    .NavBarBrand {
+        font-size: 1.2em;
+    }
+    .NavBarBrand img {
+        width: 30%;
+    }
+    .NavItems {
+        font-size: small;
+        padding-left: 0px;
+    }
+}
