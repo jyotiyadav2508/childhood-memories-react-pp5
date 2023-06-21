@@ -4,12 +4,12 @@
 
 ## Table of Contents
 - [Testing](#testing)
-  - [Features Testing](#features-testing)
   - [User Story Testing](<#user-story-testing>)
-  - [Testing Technologies](<#testing-technologies>)
+  - [Manual Testing of Features](#manual-testing-of-features)
+- [Validation](#validation)
 - [Performance](#performance)
   - [Google's Lighthouse Performance](#googles-lighthouse-performance)
-- [Code Validation](#code-validation)
+
 
 ## Testing
 
@@ -44,3 +44,239 @@ As a site user <br>I can like/unlike comments <br> so that I can share my feelin
 As a site user <br>I can view a detailed profile page of users <br> so that I can see their posts and learn more about the user. I can also see their following count, followers count, etc.| **Acceptance Criteria**<br>Given that a signed-in user<br> When they click on username of the list of users <br>Then they can see their full name, followers info, brief bio and their post along with other details | Profile Avatar | :white_check_mark:
 As a site user <br>I can see the most popular profiles <br> so that I can see who has the most interesting posts | **Acceptance Criteria**<br>Given that a signed-in user<br> When they navigate to the Home / Feed /Liked page <br>Then they can see a list of the most popular profiles with the follow button | Popular Profile list  | :white_check_mark:
 As a site user <br>I can update my own profile <br> so that I can make changes as needed |**Acceptance Criteria**<br>Given that a signed-in user<br> When they click on edit profile option <br>Then they can see an option to update their name, brief bio, image and other details | Profile Edit form  | :white_check_mark:
+
+---
+
+### Manual Testing of Features
+I manually tested all the features of the website making sure to go through them with different browsers and device sizes. I also checked the features of the site against the original user stories and compared them with the acceptance Criteria. 
+
+The aspects considered while testing:
+- CRUD functionality for Posts, Comments, Likes, Follows and Profile on both the development and deployed version of the site.
+- All Nav links open on the correct page
+- Page responsiveness
+- Authentication works displaying a different set of options for logged-in users compared to logged-out
+- Not found pages display correctly when a non-existent URL when entered
+
+The sections below presents an exhaustive list of manual tests done.
+
+#### LandingPage
+
+**Function Tests:**
+
+| **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| When Sign Up Nav Item is clicked, Sign Up page opens| **Pass** |
+| When Sign In Nav Item is clicked, Sign In page opens| **Pass** |
+| When Sign Up New? button is clicked, Sign Up page opens| **Pass** |
+| When Sign In Member? button is clicked, Sign In page opens| **Pass** |
+| When Logo is clicked, Landing page first view returns| **Pass** |
+| When Footer links are clicked, Respective links open| **Pass** |
+
+**Responsiveness Test:**
+
+| **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| When in Inspect mode in Dev Tools is open, Landing Page is responsive| **Pass** |
+
+#### PostsListPage
+
+**Function Tests:**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| On the top position, NavBar Home NavItem changes view| **Pass** |
+| On the left panel, one can see categories section| **Pass** |
+| On the right panel, one can see PopularProfiles section| **Pass** |
+| In the center, one can see posts section | **Pass** |
+| Latest post features first | **Pass** |
+| Posts section has infinite scroll feature| **Pass** |
+
+**Responsiveness Test:**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| On the large devices and above, three columns are visible with panels ratio 1:2:1| **Pass** |
+| On the small devices like mobile and above, one column is visible| **Pass** |
+| On the small devices like mobile and above, NavBar toggles to Hamburger menu view| **Pass** |
+
+#### Feed Page
+
+**Function Tests:**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| On the top position, NavBar Feed NavItem changes view  | **Pass** |
+| On the left panel, one can see category section| **Pass** |
+| On the right panel, one can see PopularProfiles section| **Pass** |
+| In the center, one can see section enlisting all the posts of the profiles user follows | **Pass** |
+| Post section has infinite scroll feature| **Pass** |
+
+**Responsiveness Test:**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| On the large devices and above, three columns are visible with panels ratio 1:2:1| **Pass** |
+| On the small devices like mobile and above, one column is visible| **Pass** |
+| On the small devices like mobile and above, NavBar toggles to Hamburger menu view| **Pass** |
+
+
+#### Liked Page
+
+**Function Tests:**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| On the top position, NavBar Liked NavItem changes view  | **Pass** |
+| On the left panel, one can see caregory section| **Pass** |
+| On the right panel, one can see PopularProfiles section| **Pass** |
+| In the center, one can see section enlisting all the posts that user liked | **Pass** |
+| Post section has infinite scroll feature| **Pass** |
+
+**Responsiveness Test:**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| On the large devices and above, three columns are visible with panels ratio 1:2:1| **Pass** |
+| On the small devices like mobile and above, one column is visible| **Pass** |
+| On the small devices like mobile and above, NavBar toggles to Hamburger menu view| **Pass** |
+
+#### Create Post
+
+**Function Tests:**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| When  'Add Post' nav link is clicked, Post create form opens | **Pass** |
+| Contains title, category, description and image fields that users can fill and submit| **Pass** |
+| Upon submitting filled form, post is shown in the post list page (Home page) | **Pass** |
+
+#### Categories
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| User can sort the different categories of posts by selecting a badge | **Pass** |
+
+#### Search Feature
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| Allows to search through author name,  post title and category | **Pass** |
+| Can be seen in all list pages| **Pass** |
+
+#### Popular Profiles
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| Shows 10 most followed profiles in large devices in right column| **Pass** |
+| It shows first four most followed profiles in the app in medium to small devices| **Pass** |
+| **Pass** |
+| Can be seen in all list and post/profiles/feed/liked details pages| **Pass** |
+| The component displays user avatar, name and follow/unfollow button| **Pass** | 
+| Users are able to follow a specific profile they like and then be able to easily view their posts in the Feed| **Pass** | 
+
+#### Post Section in PostsListPage (Home)
+
+**Function Tests:**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| The posts are displayed in a single list, styled as cards for clean separation between posts| **Pass** |
+| Infinite scroll feature| **Pass** |
+| Each post includes a title, category, description and image| **Pass** |
+| Posts show Like and Comments icons showing number they received.| **Pass** | 
+| Clicking on heart icon adds a like to the post| **Pass** | 
+| Clicking on comments icon takes user to the post detail page which displays all the comments the post recieved.| **Pass** | 
+
+**Responsiveness**
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| Post section takes up 50% width (central column) in large devices | **Pass** |
+| Post section takes up 100% width in small and medium devices| **Pass** |
+
+#### Comments
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| The section can be found under a post in post detail pages| **Pass** |
+| Can be accessed by clicking the image, comments icon on posts and the respective detail page opens|**Pass** |
+| Allows users to add a comment on a post| **Pass** |
+| Comments can be edited or deleted if the logged in user is the owner of the comment| **Pass** |
+| Comment list displays the date the comment was posted or edited| **Pass** |
+| Editing of other users' comments is not allowed as dropdown menu will not be visible.| **Pass** | 
+
+#### Like Unlike Feature
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| A logged in user can like the post that interests them| **Pass** |
+| A logged in user can unlike post if they have changed their mind|**Pass** |
+| The liked posts will appear in "Liked" page| **Pass** |
+| The number the likes recieved by the post can be seen on each page| **Pass** |
+| A logged in user can also like/unlike the comment on the post | **Pass** |
+
+#### Post Detail Page
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| Contains details of a single post - image, title, description (if provided by the user) and its category tag| **Pass** |
+| Contains like icon to allow user to like the post| **Pass** |
+| Features comments section below the post| **Pass** |
+| Comments add field will be visible to the users.| **Pass** |
+| Contains a dropdown menu on the post to allow the owner to edit or delete the post| **Pass** |
+| Like icon in posted comment list to allow user to like the comment | **Pass** |
+
+#### Post Edit Form
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| Can only be accessed from the post details page by clicking the dropdown menu that can be seen only if the logged in user is the owner of the post as shown here| **Pass** |
+| Contains title, category, description and image fields that they can fill and update| **Pass** |
+| They will be redirected to Post Details page.| **Pass** |
+
+#### Post Delete Option
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| The owner of the post can choose to delete the post from the dropdown menu| **Pass** |
+| The reader of the post, who is not the owner of the post cannot choose to delete the post as there will be no dropdown menu| **Pass** |
+
+#### Profile Details Page
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| The user can access their profile or others by selecting their avatars.| **Pass** |
+| Displays info how many followers user has and how many users they are following| **Pass** |
+| It also shows number of posts they created.| **Pass** |
+|The edit profile page provides user's details including profession, location, change their profile image |**Pass** |
+| It also enlists the posts they created as you scroll down.| **Pass** |
+| If the user signed in and clicks on their profile, they can see a dropdown menu at top right corner, which a non-owner cannot see| **Pass** |
+|Dropdown menu features edit profile, change username, change password.|**Pass**|
+
+#### Profile Edit Form
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| Upon clicking on owner's own Profile detail page Dropdown menu with Edit icon, they can access - Profile Edit Form| **Pass** |
+|The edit profile page provides a user to edit their own details including profession, location, change their profile image.| **Pass** |
+
+
+### Profile username/Password change option
+
+|  **Expected Feature** | **Result** |
+|-------------------------|---------------------|
+| Can be accessed from  Dropdown menu with username change on profile page| **Pass** |
+|Upon clicking on the username change option, they can update their name.| **Pass** |
+| Can be accessed from  Dropdown menu with password change on profile page| **Pass** |
+|Upon clicking on the password change option, they can update the password.| **Pass** |
+|They will be redirected to Home page.| **Pass** |
+
+---
+
+## Validation
+
+### W3C Validator 
+
+The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML of the website.
+
+
