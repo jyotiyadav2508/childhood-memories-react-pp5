@@ -1,9 +1,14 @@
 .NavBar {
-    background-color:#fa9455;
+    background-color:#fa9455 !important;
     border: 1px solid #c95106;
     font-size: 1.2rem;
     height:90px;
 }
+
+.NavBarCollapse {
+    background-color:#fa9455 !important;
+}
+
 .NavLink {
     padding: 10px;
     color:black;
@@ -16,6 +21,9 @@
 color: #2142b2;
 }
 
+/* #basic-navbar-nav {
+    background: red !important;
+} */
 /* @media all and (max-width: 991px) {
     .NavBar {
         font-size: 0.8rem;

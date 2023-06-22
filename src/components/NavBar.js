@@ -50,7 +50,7 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
-        to="/"
+        to="/home"
       >
         <i className="fas fa-home"></i>Home
       </NavLink>
@@ -126,7 +126,7 @@ const NavBar = () => {
       className={styles.NavBar}
       expand="lg"
       fixed="top"
-    >
+>
       <Container fluid>
         <NavLink to="/">
           <Navbar.Brand>
@@ -144,7 +144,9 @@ const NavBar = () => {
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
         />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse
+        className={styles.NavBarCollapse}
+        id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>

@@ -2,14 +2,10 @@ import React, {useState} from 'react';
 import { Modal, Button } from "react-bootstrap";
 
 const DeleteModal=({onDelete, onCancel}) => {
-    const [showModal, setShowModal] = useState(false);
-  
-    const handleClose = () => setShowModal(false);
-    // const handleShow = () => setShowModal(true);
   
     return (
       <>  
-        <Modal show={showModal} onHide={handleClose}>
+        <Modal show={true} onHide={onCancel}>
           <Modal.Header closeButton>
             <Modal.Title>Hey there</Modal.Title>
           </Modal.Header>

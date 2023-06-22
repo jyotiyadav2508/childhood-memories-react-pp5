@@ -41,7 +41,6 @@ export const DropdownMenu = ({ handleEdit, handleDeleteClick}) => {
         <Dropdown.Item
           className={styles.DropdownItem}
           onClick={handleDeleteClick}
-        // onclick={handleDelete}
           aria-label="delete"
         >
           <i className="fas fa-trash-alt" />

@@ -37,8 +37,6 @@ function App() {
     <div className={styles.App}>
       <>
         <NavBar />
-        {/* <Header/> */}
-        {/* <Sidebar/> */}
         <Container fluid className={styles.Main}>
           {!currentUser ? (
             <Switch>
@@ -52,7 +50,7 @@ function App() {
             <Switch>
               <Route
                 exact
-                path="/"
+                path="/home"
                 render={() => (
                   <PostsListPage message="No results found. Try using other search keywords." />
                 )}
