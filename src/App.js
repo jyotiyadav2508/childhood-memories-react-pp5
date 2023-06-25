@@ -71,7 +71,7 @@ function App() {
                 render={() => (
                   <PostsListPage
                     message="No results found. Try using other search keywords or like a post."
-                    filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_on&`}
+                    filter={`post_likes__owner__profile=${profile_id}&ordering=-likes__created_on&`}
                   />
                 )}
               />

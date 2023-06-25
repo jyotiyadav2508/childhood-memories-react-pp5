@@ -66,15 +66,21 @@ export const unfollowHelper = (profile, clickedProfile) => {
  * Sets, refreshes and removes JSON Web Tokens.
  * The variables and logic have been created using the Moments walkthrough.
  */
+
+  // Function to set a token timestamp in the browser storage
 export const setTokenTimestamp = (data) => {
     const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
     localStorage.setItem('refreshTokenTimestamp', refreshTokenTimestamp);
   };
   
+  // Token will be refreshed only for logged in user
   export const shouldRefreshToken = () => {
     return !!localStorage.getItem('refreshTokenTimestamp');
   };
   
+//    Funtion to remove the localstorage value if user logs out
+//    or refresh token has expired
+
   export const removeTokenTimestamp = () => {
     localStorage.removeItem('refreshTokenTimestamp');
   } 

@@ -37,7 +37,7 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-  const [showAlert, setShowAlert] = useState(false);
+//   const [showAlert, setShowAlert] = useState(false);
 
   /*
   Handles editing of the post
@@ -53,7 +53,7 @@ const Post = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
-      setShowAlert(true);
+    //   setShowAlert(true);
       setTimeout(function () {
         history.goBack();
       }, 1500);
