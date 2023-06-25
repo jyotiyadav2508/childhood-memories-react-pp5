@@ -145,6 +145,8 @@ function PostEditForm() {
             <option value="Place">Place</option>
             <option value="School">School</option>
             <option value="Event">Event</option>
+            <option value="Event">Art</option>
+            <option value="Event">Media</option>
             <option value="Others">Others</option>
           </Form.Control>
         </Form.Group>

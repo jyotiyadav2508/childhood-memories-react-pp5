@@ -18,9 +18,9 @@ const Post = (props) => {
     owner,
     profile_id,
     profile_image,
-    comments_count,
+    comment_count,
     likes_count,
-    like_id,
+    post_likes_id,
     title,
     content,
     image,
@@ -56,7 +56,7 @@ const Post = (props) => {
     //   setShowAlert(true);
       setTimeout(function () {
         history.goBack();
-      }, 1500);
+      }, 1000);
     } catch (err) {
       // console.log(err);
     }
@@ -76,12 +76,12 @@ const Post = (props) => {
    */
   const handleLike = async () => {
     try {
-      const { data } = await axiosRes.post("/likes/", { post: id });
+      const { data } = await axiosRes.post("/post_likes/", { post: id });
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+            ? { ...post, likes_count: post.likes_count + 1, post_likes_id: data.id }
             : post;
         }),
       }));
@@ -97,12 +97,12 @@ const Post = (props) => {
    */
   const handleUnlike = async () => {
     try {
-      await axiosRes.delete(`/likes/${like_id}/`);
+      await axiosRes.delete(`/post_likes/${post_likes_id}/`);
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+            ? { ...post, likes_count: post.likes_count - 1, post_likes_id: null }
             : post;
         }),
       }));
@@ -150,7 +150,7 @@ const Post = (props) => {
             >
               <i className="far fa-heart" />
             </OverlayTrigger>
-          ) : like_id ? (
+          ) : post_likes_id ? (
             <span onClick={handleUnlike}>
               <i className={`fas fa-heart ${styles.Heart}`} />
             </span>
@@ -170,7 +170,7 @@ const Post = (props) => {
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />
           </Link>
-          {comments_count}
+          {comment_count}
         </div>
       </Card.Body>
     </Card>

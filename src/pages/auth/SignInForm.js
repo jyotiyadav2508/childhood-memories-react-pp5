@@ -5,7 +5,7 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-import childhood from "../../assets/childhood-quote4.jpg";
+import childhood from "../../assets/childhood-quote1.jpg";
 
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
@@ -52,7 +52,7 @@ function SignInForm() {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
-      history.push("/");
+      history.push("/home");
     } catch (err) {
       setErrors(err.response?.data);
     }

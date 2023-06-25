@@ -7,6 +7,7 @@ import { DropdownMenu } from "../../components/DropdownMenu";
 import CommentEditForm from "./CommentEditForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
+import DeleteModal from "../../components/DeleteModal";
 
 /**
  * Renders a selected Comment object from the API
@@ -27,7 +28,15 @@ const Comment = (props) => {
     comment_likes_count,
   } = props;
 
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+    /**
+   * For user authentication
+   * To restrict owner of the post not to like their own post
+   * */
+
   const currentUser = useCurrentUser();
+//   const history = useHistory();
   const isOwner = currentUser?.username === owner;
   const [showEditForm, setShowEditForm] = useState(false);
 
@@ -53,7 +62,14 @@ const Comment = (props) => {
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
     } catch (err) {}
-  };
+        setShowDeleteModal(false);
+    };
+    const handleCancel=()=>{
+        setShowDeleteModal(false);
+    }
+    const handleDeleteClick=() =>{
+        setShowDeleteModal(true);
+    }
 
   /**
    * To like a comment by the user
@@ -106,9 +122,7 @@ const Comment = (props) => {
       console.log(err);
     }
   };
-//   if (!comment_likes_count) {
-//     return null;
-//   }
+
   return (
     <>
       <hr />
@@ -167,11 +181,16 @@ const Comment = (props) => {
                                     to either edit or delete it */}
         {isOwner && !showEditForm && (
           <DropdownMenu
+                // handleEdit={handleEdit}
+                handleDeleteClick={handleDeleteClick}
             handleEdit={() => setShowEditForm(true)}
-            handleDelete={handleDelete}
+            // handleDelete={handleDelete}
           />
         
         )}
+        {showDeleteModal && (
+                    <DeleteModal onDelete={handleDelete} onCancel={handleCancel} />
+                  )}
       </Media>
     </>
   );

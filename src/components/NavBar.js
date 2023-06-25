@@ -130,7 +130,7 @@ const NavBar = () => {
       fixed="top"
 >
       <Container fluid>
-        <NavLink to="/">
+        <NavLink to="/home">
           <Navbar.Brand>
             <img
               src={logo}

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Modal, Button } from "react-bootstrap";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const DeleteModal=({onDelete, onCancel}) => {
-  
+    const currentUser = useCurrentUser();
     return (
       <>  
         <Modal show={true} onHide={onCancel}>
           <Modal.Header closeButton>
-            <Modal.Title>Hey there</Modal.Title>
+            <Modal.Title>Hey {currentUser?.username}</Modal.Title>
           </Modal.Header>
           <Modal.Body>Are you sure you want to delete it?</Modal.Body>
           <Modal.Footer>
