@@ -119,6 +119,8 @@ function PostCreateForm() {
             <option value="Place">Place</option>
             <option value="School">School</option>
             <option value="Event">Event</option>
+            <option value="Media">Media</option>
+            <option value="Art">Art</option>
             <option value="Others">Others</option>
           </Form.Control>
         </Form.Group>

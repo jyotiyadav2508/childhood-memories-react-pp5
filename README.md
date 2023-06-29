@@ -345,6 +345,7 @@ The tasks that I have followed during the development phase were carried out in 
 The colour scheme has considered based on easy accessibility for all.
 Complimentarity was key feature in color selection, to give it a pleasant feel for all age groups.
 The palette was generated with inspiration from palettes provided by [Coolers](https://coolors.co/). The color palette used is as shown below.
+![Color Palette](documentation/color-palette.png)
 
 ### Typography
 Fonts were imported using Google Fonts. Font "'Fredoka One', cursive" was used throughout with a backup of 'Raleway', sans-serif'. It was chosen for easy readability for users.
@@ -353,6 +354,13 @@ Fonts were imported using Google Fonts. Font "'Fredoka One', cursive" was used t
 The imagery on the website has been seleced according to the post requirement. Many images were taken from Pexels.
 
 ### Wireframes
+
+The wireframes were generated using Balsamiq. The wireframes can be found in these links:<br>
+[Wireframes for Desktop](documentation/wireframes/Desktop-wireframes.pdf)<br>
+[Wireframes for Tablet](documentation/wireframes/Tablet-Wireframes.pdf)<br>
+[Wireframes for Mobile](documentation/wireframes/Mobile-wireframes.pdf)
+
+[Back to top ⇧](#contents)
 
 
 ## Technologies
