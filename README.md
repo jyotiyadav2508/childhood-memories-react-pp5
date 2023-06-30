@@ -42,6 +42,7 @@
 	- [Imagery](<#imagery>)
 	- [Wireframes](<#wireframes>)
 - [Features](<#features>)
+- [Component](<#component>)
 - [Technologies](<#technologies>)
 	- [Languages Used](<#languages-used>)
 	- [Tools](<tools>)
@@ -361,6 +362,159 @@ The wireframes were generated using Balsamiq. The wireframes can be found in the
 [Wireframes for Mobile](documentation/wireframes/Mobile-wireframes.pdf)
 
 [Back to top ⇧](#contents)
+
+## Features
+
+### Landing Page
+- Includes navbar, hero-image, main body and a footer
+- NavBar features logo, About, Sign Up and Sign in links
+- A footer is displayed at the bottom of the landing page
+	- Footer contains information about the creator
+	- Contains copyrights info
+	- Contains links to social media Linkedin and GitHub page (opening in a separate window)
+- Landing page main body includes description about the app
+
+As shown here:
+![Landing Page](documentation/features/landing-page.png)
+
+### NavBar
+- Featured and consistent on the all pages
+- Two variants of the navbar:
+  - New or not logged-in users will see the About, Sign up and Sign in icons, as shown in ![NavBar Logged out](documentation/features/logged-out-navbar.png)
+    - NavLink that links to the about page, allowing users to know more about website
+	- NavLink that links to the log in page, allowing users to log in
+    - NavLink that links to the sign up page, allowing users to create an account
+  - For logged in user it shows Home, About, Feed and Liked, Sign Out and Profile Nav items. As shown in ![NavBar logged in](documentation/features/logged-in-navbar.png)
+  	- NavLink that links to the home page, displaying all posts of the users the logged in user follows
+    - NavLink that links to the about page, displaying more information about website
+	- NavLink that links to the liked page, displaying only the posts a user has liked
+	- NavLink that signs the user out
+    - NavLink that links to the profile page, display information about logged in user
+- The NavBar is fully responsive and changes to a toggler (hamburger menu) on smaller size screens.
+
+### About
+The 'About' page is created so new users will immediately be able to learn the purpose of the website and get user guidance how to use it and features of this website. The 'About' page serves a useful purpose as it explains what the 'Feed' page is for, and what the 'Liked' page is for. Users will be reminded of the functionality of the website such as the capability of being able to edit/delete posts and comments, not being able to like to their own posts/comments, the character limit of titles and content, etc. All of the information a new user or returning user would possibly need will be found on this page.
+
+As shown here:
+![About Page](documentation/features/about-page.png)
+
+### Sign Up Link and Form
+- Allows users to create an account
+- Users must provide a valid username and enter their preferred password twice for confirmation
+As shown on link provided: ![Sign Up](documentation/features/signup-page.png)
+
+### Sign In Link and Form
+- Allows registered users to login to their account
+- Both the username and password have to be correct to be signed in
+- Displays errors if the username or password is wrong or the input is invalid
+As shown on link provided: ![Sign In](documentation/features/signin-page.png)
+
+### Post Section (Home)
+
+- The posts are displayed in a single list, styled as cards for clean separation between posts.
+- Enabled with infinite scroll feature.
+- Each post includes a title, description and image, along with Like and Comments icons showing number they received.
+- Clicking on heart icon adds a like to the post.
+- Clicking on comments icon takes user to the post detail page which displays all the comments the post recieved.   
+![Post Section](documentation/features/home-page.png)
+
+### Categories
+
+- User can sort the different categories of posts by selecting a badge. 
+![Category Section](documentation/features/category-panel.png)
+
+### Search Feature
+
+- By typing a query in the search bar users can find a specific post they are looking for
+- Allows to search through all post title, category or author name
+
+![Search Bar](documentation/features/search-bar.png)
+
+### Popular Profiles
+
+- Reusable component shows 10 most followed profiles in large devices in right column.
+- It shows first four most followed profiles in the app in medium to small devices.
+- The component displays user avatar, name and follow/unfollow button.
+- - Users are able to follow a specific profile they like and then be able to easily view their posts in the Feed.
+![Popular Profiles](documentation/features/profile-panel.png)
+
+### Feed page
+
+- Contains all posts of users that the logged in user follows
+- The posts are displayed in a single list, styled as cards for clean separation between posts.
+- Each post includes a title, description and image, along with Like and Comments icons showing number they received.
+- Clicking on heart icon adds a like to the post.
+- Clicking on comments icon takes user to the slected post's detail page which displays all the comments the post recieved.
+- Enabled with infinite scroll feature.
+
+### Liked page
+
+- Contains all posts of users that the logged in user likes 
+- The posts are displayed in a single list, styled as cards for clean separation between posts.
+- Each post includes a title, description and image, along with Like and Comments icons showing number they received.
+- Clicking on heart icon adds a like to the post.
+- Clicking on comments icon takes user to the slected post's detail page which displays all the comments the post recieved.
+- Enabled with infinite scroll feature.
+
+### Comments Section 
+
+- The section can be found under a post in post detail pages.
+- Can be accessed by clicking the comments icon and post.
+- Allows users to add a comment on a post.
+- Comments can be edited or deleted.
+- Displays the date the comment was posted or edited.
+- All comments can be read by all other users.
+- Editing of other users' comments is not allowed as dropdown menu will not be visible. 
+![Comments Section](documentation/features/comment-section.png)
+
+### Post Create Form 
+
+- Logged in user can access the CURD functionality for post.
+- Post create form contains title, category, description and image fields that they can fill and update.
+![Post Create Form](documentation/features/post-create-form.png)
+
+### Post Edit Form 
+
+- Can only be accessed from the post details page by clicking the dropdown menu that can be seen only if the logged in user is the owner of the post as shown 
+- Contains title, category, description and image fields that they can fill and update.
+- They will be redirected to Post Details page.
+![Post Edit Form](documentation/features/edit-post.png)
+
+### Like
+
+- A logged in user can like  post that interests them
+- A logged in user can unlike post if they are not interested in it
+- The liked post will appear in "Liked" page
+- The number the likes recieved by the post can be seen on each page.
+![Like](documentation/features/like-unlike.png)
+
+### Post Detail Page
+
+- Contains details of a single post - image, title, description (if provided by the user) and its category tag
+- Contains number of likes and comments the post has
+- Contains like icon to allow user to like the post
+- Features comments section below the post. 
+- Comments add field will be visible to the users.
+- Contains a dropdown menu on the post to allow the owner to edit or delete the post
+The Post Detail page looks like as shown below:
+![Post Detail Page](documentation/features/post-detail-page.png)
+
+### Profile Page
+- Logged in user can click either avatar from NavBar or from popular profiles panel to navigate to pofile page, where he can update his/her profile info. Also they can see number of post, number of followers, number of following and list of post posted by user so far.
+The Post Detail page looks like as shown below:
+![Profile Page](documentation/features/profile-page.png)
+
+## Components
+A number of the components created are reusable and were used across the website in multiple pages and sections.
+
+- `<Asset />` - Asset.js - renders a loading spinner. It is utilized in several places across the site, including showing a loading spinner where API calls are made.
+- `<Avatar />` - Avatar.js - displays a user's profile image. It is used in the Create Panel along with the Username. Passed props allow for setting image source and size and adjust image dimensions depending on where the component is rendered.
+- `<DropdownMenu />` - DropdownMenu.js - reusable component, used to render the dropdown menu which allows user to edit or delete their own posts or comments, and also edit their profile or change profile password. provides a dropdown menu with some additional actions a user can take, such as editing and deleting. 
+- `<NavBar />` - NavBar.js-  reusable component with the content depending on the login status of the user. For logged in user it shows Home, About, Feed and Liked and Sign Out Nav items. For those who are not logged in, it displays icon links to about, sign up or sign in. The component is used on each page of the app.
+- `<PageNotFound />` - PageNotFound.js - specific component to display 404 error message for the url which does not exist.
+- `<PopularProfiles />` - PopularProfiles.js - reusable component showing most followed profiles in the app named as "Active Inspirers". The component displays user avatar, name and follow/unfollow button.
+- `<DeleteModal />` - DeleteModal.js - reusable component, used to render the modal when user want to delete their own post and comment.
+
 
 
 ## Technologies
