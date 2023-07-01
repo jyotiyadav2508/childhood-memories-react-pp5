@@ -11,7 +11,7 @@
 
  ## Deployed Link
 
-- [Front-End Deployed Link]()
+- [Front-End Deployed Link](https://childhood-memories-front-end.herokuapp.com/)
 
 ## Back End Links
 
@@ -574,6 +574,17 @@ It is used to enable infinite scrolling on the Posts and Recommendations compone
 
 Many bugs have occurred during the development of the front end project. Most notable bugs are listed below:
 
+(1) Issue: When click on like icon in comment box, it showed NaN written instead of number of likes and when refreshed like icon changed into unlike.
+    - Fix: Add get_comment_likes_id function in comment model and replace queryset=comment.object.all with annotate method in view.py file. Also add related_name='comment_likes' in comment field in comment_likes model.
+
+(2) Issue: Collapse NavBar didn't display background color when expend in small devices.
+    - Fix: Style the NavBarCollapse class with background-color:#fa9455 !important.
+
+(3) Issue: Home nav link is always active even if we are active on another nav link.
+    - Fix: Replace the exact path="/" to "/home" in Route in app.js 
+
+(4) Issue: DeleteModal was not disappear while clicking on delete icon from dropdown menu.
+    - Fix: delete const handle =() => setShowModel(false) from deleteModal.js because it already define in parent component.
 
 ## Testing
 Testing has taken place continuously throughout the development of the project. Each view was tested regularly. When the outcome was not as expected, debugging took place at that point. An exhaustive list of features were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render.
@@ -607,6 +618,20 @@ This application has been deployed from GitHub to Heroku by following the steps 
 
 ### Final Deployment
 
+1. Comment out all the console.log within the codes.
+2. Navigate to package.json and in the scripts section add the following command:
+```
+"heroku-prebuild": "npm install -g serve,"
+```
+3. Add a Procfile to the root of the project with the following:
+```
+web: serve -s build
+```
+4. Git add, commit and push your code
+5. Navigate to Heroku and deploy the project via the deploy button under the 'Deploy' tab
+
+[Back to top ⇧](#contents)
+
 
 ## Credits and Resources
 
@@ -618,6 +643,8 @@ This application has been deployed from GitHub to Heroku by following the steps 
 
 
 ## Acknowledgements
+
+- My Mentor Mr. Akshat Garg for his guidance and advice during the project.
 
 - Thank you to Tutor Support for always being there for me, and always being patient with my questions.
 
