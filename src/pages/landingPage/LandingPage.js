@@ -1,7 +1,9 @@
 import React from "react";
-import { Button, Row, Col, Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-// import landingImage from "../../assets/landingPage-bg.jpg";
 import landingImage from "../../assets/landing-image.jpg";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/LandingPage.module.css";

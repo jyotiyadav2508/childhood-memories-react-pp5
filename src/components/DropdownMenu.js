@@ -1,9 +1,7 @@
 import React from "react";
-// import { Modal, Button } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/DropdownMenu.module.css";
 import { useHistory} from "react-router";
-// import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu

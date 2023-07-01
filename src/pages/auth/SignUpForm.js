@@ -6,16 +6,13 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import axios from "axios";
-
-import {
-  Form,
-  Button,
-  Image,
-  Col,
-  Row,
-  Container,
-  Alert,
-} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
@@ -130,7 +127,6 @@ const SignUpForm = () => {
         >
           <Image
             className={`${appStyles.FillerImage}`}
-            //   Pending work- to Change following picture
             src={childhood}
             alt="childhood-quote"
             height="60"

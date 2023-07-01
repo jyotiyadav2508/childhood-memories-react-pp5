@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Badge, Col, Container, Form, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Badge from "react-bootstrap/Badge";
+import Form from "react-bootstrap/Form";
 
 import Post from "./Post";
 import Asset from "../../components/Asset";
@@ -45,7 +49,7 @@ function PostsListPage({ message, filter = "" }) {
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     /**

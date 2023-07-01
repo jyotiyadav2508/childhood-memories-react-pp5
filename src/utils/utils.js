@@ -1,7 +1,6 @@
 import { axiosReq } from "../api/axiosDefaults";
 import jwtDecode from "jwt-decode";
 
-
 /**
  * Credit: Moments Walkthrough CI
  *  Renders and updates different types of data for the InfiniteScroll component

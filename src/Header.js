@@ -20,7 +20,7 @@ const Header = () => {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
     } catch (err) {
-      console.log(err);
+    //   console.log(err);
     }
   };
   return (

@@ -79,7 +79,7 @@ const Comment = (props) => {
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/comment_likes/", { comment: id });
-      console.log("data",data);
+    //   console.log("data",data);
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {
@@ -93,9 +93,9 @@ const Comment = (props) => {
 
         }),
          }));
-         console.log("Comments likes count", comment_likes_count);
+        //  console.log("Comments likes count", comment_likes_count);
     } catch (err) {
-      console.log(err);
+    //   console.log(err);
     }
   };
   /**
@@ -119,7 +119,7 @@ const Comment = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+    //   console.log(err);
     }
   };
 

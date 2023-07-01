@@ -1,8 +1,11 @@
 // Codes credit: CI's Moments walkthrough project
 
 import React, { useEffect, useRef, useState } from "react";
-
-import { Container, Form, Button, Alert, Image } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -46,7 +49,7 @@ function PostEditForm() {
           ? setPostData({ title, content, category, image })
           : history.push("/");
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         if (err.response?.status !== 401) {
             setErrors(err.response?.data);
         }
