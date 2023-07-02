@@ -202,7 +202,7 @@ function PostCreateForm() {
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
           type="submit"
         >
-          <i class="fa-solid fa-square-plus"></i>Submit Post
+          <i className="fa-solid fa-square-plus"></i>Submit Post
         </Button>
       </Form>
       <br />

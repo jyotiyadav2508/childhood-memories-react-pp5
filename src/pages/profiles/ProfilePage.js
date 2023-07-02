@@ -130,19 +130,28 @@ function ProfilePage() {
       <hr />
       <h5 className="text-center">
         See what {profile?.owner} has posted so far!{" "}
-        <i class="fa-regular fa-hand-point-down"></i>
+        <i className="fa-regular fa-hand-point-down"></i>
       </h5>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
-          children={profilePosts.results.map((post) => (
-            <Post key={post.id} {...post} setPosts={setProfilePosts} />
-          ))}
+        //   children={profilePosts.results.map((post) => (
+        //     <Post key={post.id} {...post} setPosts={setProfilePosts} />
+        //   ))}
           dataLength={profilePosts.results.length}
           loader={<Asset spinner />}
           hasMore={!!profilePosts.next}
           next={() => fetchMoreData(profilePosts, setProfilePosts)}
-        />
+          >
+            {profilePosts.result.map((post) =>(
+                < Post 
+                key={Post.id}
+                {...post}
+                setPosts={setProfilePosts}
+                />
+            ))}
+            </ InfiniteScroll>
+    
       ) : (
         <Asset
           src={NoResults}

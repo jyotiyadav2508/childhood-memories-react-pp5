@@ -290,4 +290,36 @@ All CSS code passed through the validator without any issues.
 
 ![CSS Validation](documentation/validation/css-validation.png)
 
+### JSX Validation using ESLint
+
+- ESlint was downloaded following the instructions [here](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d), credit goes to Ian Meigh. 
+
+1. Do not pass children as props warning for Infinite Scroll component: This warning was ignored since it is part of the implementation for the InfiniteScroll component.
+	- It is part of the implementation for the InfiniteScroll component as shon in walkthrough.
+	- It was ignored.
+
+2. Error in DropdownMenu.js - component-definition-is-missing-display-name 
+	- Credit: [Quora](https://www.quora.com/Why-is-component-definition-missing-display-name-react-display-name-error-occur-JavaScript-HTML-arrays-reactjs-antd-development)
+	- Reason: ESLint thinks you are defining a new component without setting any name to it.
+
+	This is explained because ESLint cannot recognise the render prop pattern because you are not directly writing this render prop into a component, but into an object.
+
+	You can either put the render prop directly into your jsx implementation of the component, or shut down the ESLint's error by doing this :
+
+	// eslint-disable-next-line react/display-name
+
+	OR
+
+	If anyone needs to avoid this in all the files, add below to the rules section of .eslintrc.js file,
+
+	{ 
+	... 
+	"rules": { 
+		"react/display-name": "off" 
+	} 
+	} 
+
+![JSX Validation](documentation/validation/eslint-validation.png)
+
+
 

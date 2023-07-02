@@ -213,7 +213,7 @@ function PostEditForm() {
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
           type="submit"
         >
-          <i class="fa-solid fa-square-plus"></i>Update Post
+          <i className="fa-solid fa-square-plus"></i>Update Post
         </Button>
       </Form>
       <br />

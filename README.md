@@ -574,16 +574,16 @@ It is used to enable infinite scrolling on the Posts and Recommendations compone
 
 Many bugs have occurred during the development of the front end project. Most notable bugs are listed below:
 
-(1) Issue: When click on like icon in comment box, it showed NaN written instead of number of likes and when refreshed like icon changed into unlike.
+(1) Issue: When click on like icon in comment box, it showed NaN written instead of number of likes and when refreshed like icon changed into unlike.<br>
     - Fix: Add get_comment_likes_id function in comment model and replace queryset=comment.object.all with annotate method in view.py file. Also add related_name='comment_likes' in comment field in comment_likes model.
 
-(2) Issue: Collapse NavBar didn't display background color when expend in small devices.
+(2) Issue: Collapse NavBar didn't display background color when expend it in small devices.<br>
     - Fix: Style the NavBarCollapse class with background-color:#fa9455 !important.
 
-(3) Issue: Home nav link is always active even if we are active on another nav link.
+(3) Issue: Home nav link is always active even if we are active on another nav link.<br>
     - Fix: Replace the exact path="/" to "/home" in Route in app.js 
 
-(4) Issue: DeleteModal was not disappear while clicking on delete icon from dropdown menu.
+(4) Issue: DeleteModal was not disappear while clicking on delete icon from dropdown menu.<br>
     - Fix: delete const handle =() => setShowModel(false) from deleteModal.js because it already define in parent component.
 
 ## Testing
@@ -641,6 +641,11 @@ web: serve -s build
 - [Stack Overflow](https://stackoverflow.com/)
     - Stack Overflow was referred to many times while trying to debug code. 
 
+- [JSX Validation](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
+    - Ian Meigh's tutorial on ESlint was used for ESlint testing.
+
+- [React Bootstrap](https://react-bootstrap.github.io/)
+    - Components from React Bootstrap were used in the project (Navigation bar, forms, cards, etc).
 
 ## Acknowledgements
 

@@ -68,19 +68,28 @@ const PostDetailPage = () => {
             ) : null}
             {comments.results.length ? (
               <InfiniteScroll
-                children={comments.results.map((comment) => (
-                  <Comment
-                    key={comment.id}
-                    {...comment}
-                    setPost={setPost}
-                    setComments={setComments}
-                  />
-                ))}
+                // children={comments.results.map((comment) => (
+                //   <Comment
+                //     key={comment.id}
+                //     {...comment}
+                //     setPost={setPost}
+                //     setComments={setComments}
+                //   />
+                // ))}
                 dataLength={comments.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!comments.next}
                 next={() => fetchMoreData(comments, setComments)}
-              />
+                >
+                    {comments.result.map((comment) =>(
+                < Comment 
+                key={comment.id}
+                {...comment}
+                setPost={setPost}
+                setComments={setComments}
+                />
+            ))}
+            </ InfiniteScroll>
             ) : currentUser ? (
               <span>No comments yet, be the first to comment!</span>
             ) : (
