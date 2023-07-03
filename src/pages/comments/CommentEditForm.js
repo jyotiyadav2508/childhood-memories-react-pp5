@@ -1,9 +1,7 @@
 //Comment edit functionality credit goes to CI's Moments Project
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
-
 import styles from "../../styles/CommentCreateEditForm.module.css";
 
 function CommentEditForm(props) {

@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Badge from "react-bootstrap/Badge";
 import Form from "react-bootstrap/Form";
-
 import Post from "./Post";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
@@ -12,8 +11,6 @@ import styles from "../../styles/PostsListPage.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import PopularProfiles from "../profiles/PopularProfiles";
-// import Sidebar from "../../components/Sidebar";
-
 import NoResults from "../../assets/no-results.png";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -68,9 +65,6 @@ function PostsListPage({ message, filter = "" }) {
   return (
     <Container fluid>
       <Row className="h-100 mt-2">
-        {/* <Col className="p-0" lg={3}>
-        <Sidebar />
-        </Col> */}
         <Col className="px-2" sm={12} lg={3}>
             <Container className={`${appStyles.Content} mt-3 mb-3`}>
             <h5 className="text-center font-weight-bold mt-2"> Categories</h5>

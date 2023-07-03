@@ -5,7 +5,7 @@
  >There always comes a moment in our life when we wish we could go back to our childhood. Not to change anything, but to feel something twice.
  Childhood is the best of all the seasons of life, and the longer it lasts with happy memories, the stronger the emotional stability in adulthood. Recalling happy memories elicits positive feelings and enhances one’s wellbeing. They strengthen our sense of identity and purpose and bond our relationships. The main motive of this website is to recalling and sharing some of most precious childhood memories and heal our inner child. 
 
- ![Screenshot of Am I Responsive](screenshot-here)
+ ![Screenshot of Am I Responsive](documentation/mockup.png)
 
  **Childhood Memories** is a social-media website designed to mimic the features of Twitter. Users can create an account, log in, make a post, make comments on posts, like other users' posts and comments, and change their profile photo and profile biography. This website is designed to allow users to make posts about incomparable memories from their childhood, and be able to engage with other users by commenting and liking on other posts/comments. This is the repository for the React frontend of Childhood Memories, created with HTML, CSS, Bootstrap, React. Components were reused throughout the React project as each part of the website was broken into individual components and linked together, transferring states and data. The project also utilises a Django Rest Framework web API.
 
@@ -575,23 +575,23 @@ It is used to enable infinite scrolling on the Posts and Recommendations compone
 Many bugs have occurred during the development of the front end project. Most notable bugs are listed below:
 
 (1) Issue: When click on like icon in comment box, it showed NaN written instead of number of likes and when refreshed like icon changed into unlike.<br>
-    - Fix: Add get_comment_likes_id function in comment model and replace queryset=comment.object.all with annotate method in view.py file. Also add related_name='comment_likes' in comment field in comment_likes model.
+  - Fix: Add get_comment_likes_id function in comment model and replace queryset=comment.object.all with annotate method in view.py file. Also add related_name='comment_likes' in comment field in comment_likes model.
 
 (2) Issue: Collapse NavBar didn't display background color when expend it in small devices.<br>
-    - Fix: Style the NavBarCollapse class with background-color:#fa9455 !important.
+  - Fix: Style the NavBarCollapse class with background-color:#fa9455 !important.
 
 (3) Issue: Home nav link is always active even if we are active on another nav link.<br>
-    - Fix: Replace the exact path="/" to "/home" in Route in app.js 
+  - Fix: Replace the exact path="/" to "/home" in Route in app.js 
 
 (4) Issue: DeleteModal was not disappear while clicking on delete icon from dropdown menu.<br>
-    - Fix: delete const handle =() => setShowModel(false) from deleteModal.js because it already define in parent component.
+  - Fix: delete const handle =() => setShowModel(false) from deleteModal.js because it already define in parent component.
 
 (5) Issue: After installing 'eslint' I came accross the error for InfiniteScroll in PostDetailPage, ProfilePage and PostListPage.
 <details>
 <summary>Children props error in Infinite scroll</summary>
 <img src='documentation/children-props-error.png' alt='children props error'>
 </details>
-    - Fix: Remove the children element from infinite scroll and place the code between the tags. 
+  - Fix: Remove the children element from infinite scroll and place the code between the tags. 
 <details>
 <summary>Solution of children props error in Infinite scroll</summary>
 <img src='documentation/solution-children-props-error.png' alt='solution of children props'>

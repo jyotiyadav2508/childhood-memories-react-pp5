@@ -53,7 +53,6 @@ const Post = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
-    //   setShowAlert(true);
       setTimeout(function () {
         history.goBack();
       }, 1000);
@@ -113,9 +112,6 @@ const Post = (props) => {
 
   return (
     <Card className={styles.Post}>
-         {/* {showAlert && (
-                <FeedbackMsg variant="info" message="Your post has been successfully deleted.." />
-            )} */}
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>

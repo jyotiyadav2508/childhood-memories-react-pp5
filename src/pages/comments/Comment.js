@@ -183,10 +183,8 @@ const Comment = (props) => {
                                     to either edit or delete it */}
         {isOwner && !showEditForm && (
           <DropdownMenu
-                // handleEdit={handleEdit}
                 handleDeleteClick={handleDeleteClick}
             handleEdit={() => setShowEditForm(true)}
-            // handleDelete={handleDelete}
           />
         
         )}

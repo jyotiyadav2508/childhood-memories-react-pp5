@@ -2,7 +2,6 @@ import React from 'react';
 import Asset from './Asset';
 import NoResults from '../assets/no-results.png';
 import Container from "react-bootstrap/Container"
-
 import styles from "../App.module.css";
 
 const NotFound = () => {

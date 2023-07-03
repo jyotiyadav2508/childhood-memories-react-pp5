@@ -5,12 +5,10 @@
     border-radius: 20px;
   }
 
-
-
-    /* Adjust landing page image size on smaller screens */
-    @media all and (max-width: 440px) {
-        .LandingImage {
-          width: 200px;
-          height: 250px;
-        }
-      } 
+/* Adjust landing page image size on smaller screens */
+@media all and (max-width: 440px) {
+    .LandingImage {
+        width: 200px;
+        height: 250px;
+    }
+    } 

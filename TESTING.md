@@ -292,7 +292,8 @@ All CSS code passed through the validator without any issues.
 
 ### JSX Validation using ESLint
 
-- ESlint was downloaded following the instructions [here](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d), credit goes to Ian Meigh. 
+- ESlint was downloaded following the instructions [here](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d), credit goes to Ian Meigh. Following error were shown while running.<br>
+
 ![JSX Validation](documentation/validation/eslint-validation.png)
 
 1. Error: Do not pass children as props compile error for Infinite Scroll component: This was solved by removing children element and place code in tags. Detailed screenshot in Issue and Fix section in README.md.
@@ -319,6 +320,21 @@ All CSS code passed through the validator without any issues.
 	} 
 
 I used last one. Add "react/display-name": "off" in .eslintrc.json file.
+
+## Performance
+
+  - Dev tool lighthouse test for Desktop
+
+  ![JSX Validation](documentation/desktop-lighthouse.png)
+
+
+
+  - Dev tool lighthouse test for Mobile
+
+  ![JSX Validation](documentation/mobile-lighthouse.png)
+
+
+
 
 
 

@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-
 import { Link, useHistory } from "react-router-dom";
-
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-
 import childhood from "../../assets/childhood-quote1.jpg";
-
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -18,7 +13,6 @@ import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
-
 import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from '../../utils/utils';
 

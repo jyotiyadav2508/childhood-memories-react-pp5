@@ -1,12 +1,9 @@
 import styles from "./App.module.css";
-// import Sidebar from './components/Sidebar';
 import NavBar from "./components/NavBar";
 import { Container } from "react-bootstrap";
-// import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
 import Footer from "./Footer";
-// import Header from "./Header";
 import LandingPage from "./pages/landingPage/LandingPage";
 import About from "./pages/about/About";
 import SignUpForm from "./pages/auth/SignUpForm";
@@ -27,13 +24,6 @@ function App() {
   const profile_id = currentUser?.profile_id || "";
 
   return (
-    // <Router>
-    //   <div className="App">
-    // <Header />
-    //     <Sidebar />
-    //   </div>
-    // </Router>
-
     <div className={styles.App}>
       <>
         <NavBar />
