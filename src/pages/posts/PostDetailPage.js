@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -67,29 +66,21 @@ const PostDetailPage = () => {
               "Comments"
             ) : null}
             {comments.results.length ? (
-              <InfiniteScroll
-                // children={comments.results.map((comment) => (
-                //   <Comment
-                //     key={comment.id}
-                //     {...comment}
-                //     setPost={setPost}
-                //     setComments={setComments}
-                //   />
-                // ))}
+            <InfiniteScroll
                 dataLength={comments.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!comments.next}
                 next={() => fetchMoreData(comments, setComments)}
                 >
-                    {comments.result.map((comment) =>(
-                < Comment 
+                {comments.results.map((comment) => (
+                <Comment
                 key={comment.id}
                 {...comment}
                 setPost={setPost}
                 setComments={setComments}
                 />
-            ))}
-            </ InfiniteScroll>
+                ))}
+                </InfiniteScroll>
             ) : currentUser ? (
               <span>No comments yet, be the first to comment!</span>
             ) : (

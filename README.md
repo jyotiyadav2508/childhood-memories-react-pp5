@@ -586,6 +586,18 @@ Many bugs have occurred during the development of the front end project. Most no
 (4) Issue: DeleteModal was not disappear while clicking on delete icon from dropdown menu.<br>
     - Fix: delete const handle =() => setShowModel(false) from deleteModal.js because it already define in parent component.
 
+(5) Issue: After installing 'eslint' I came accross the error for InfiniteScroll in PostDetailPage, ProfilePage and PostListPage.
+<details>
+<summary>Children props error in Infinite scroll</summary>
+<img src='documentation/children-props-error.png' alt='children props error'>
+</details>
+    - Fix: Remove the children element from infinite scroll and place the code between the tags. 
+<details>
+<summary>Solution of children props error in Infinite scroll</summary>
+<img src='documentation/solution-children-props-error.png' alt='solution of children props'>
+</details>
+
+
 ## Testing
 Testing has taken place continuously throughout the development of the project. Each view was tested regularly. When the outcome was not as expected, debugging took place at that point. An exhaustive list of features were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render.
 

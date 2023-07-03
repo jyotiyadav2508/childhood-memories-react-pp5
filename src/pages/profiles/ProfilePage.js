@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import Asset from "../../components/Asset";
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
@@ -135,23 +133,19 @@ function ProfilePage() {
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
-        //   children={profilePosts.results.map((post) => (
-        //     <Post key={post.id} {...post} setPosts={setProfilePosts} />
-        //   ))}
           dataLength={profilePosts.results.length}
           loader={<Asset spinner />}
           hasMore={!!profilePosts.next}
           next={() => fetchMoreData(profilePosts, setProfilePosts)}
           >
-            {profilePosts.result.map((post) =>(
+            {profilePosts.results.map((post) =>(
                 < Post 
                 key={Post.id}
                 {...post}
                 setPosts={setProfilePosts}
                 />
             ))}
-            </ InfiniteScroll>
-    
+            </ InfiniteScroll>    
       ) : (
         <Asset
           src={NoResults}

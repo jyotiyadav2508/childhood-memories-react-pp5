@@ -104,16 +104,13 @@ function PostsListPage({ message, filter = "" }) {
           {hasLoaded ? (
             <>
               {posts.results.length ? (
-                <InfiniteScroll
-                //   children={posts.results.map((post) => (
-                //     <Post key={post.id} {...post} setPosts={setPosts} />
-                //   ))}
+                <InfiniteScroll               
                   dataLength={posts.results.length}
                   loader={<Asset spinner />}
                   hasMore={!!posts.next}
                   next={() => fetchMoreData(posts, setPosts)}
                 >
-                {posts.result.map((post) =>(
+                {posts.results.map((post) =>(
                     < Post 
                     key={post.id}
                     {...post}

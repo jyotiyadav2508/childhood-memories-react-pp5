@@ -293,10 +293,9 @@ All CSS code passed through the validator without any issues.
 ### JSX Validation using ESLint
 
 - ESlint was downloaded following the instructions [here](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d), credit goes to Ian Meigh. 
+![JSX Validation](documentation/validation/eslint-validation.png)
 
-1. Do not pass children as props warning for Infinite Scroll component: This warning was ignored since it is part of the implementation for the InfiniteScroll component.
-	- It is part of the implementation for the InfiniteScroll component as shon in walkthrough.
-	- It was ignored.
+1. Error: Do not pass children as props compile error for Infinite Scroll component: This was solved by removing children element and place code in tags. Detailed screenshot in Issue and Fix section in README.md.
 
 2. Error in DropdownMenu.js - component-definition-is-missing-display-name 
 	- Credit: [Quora](https://www.quora.com/Why-is-component-definition-missing-display-name-react-display-name-error-occur-JavaScript-HTML-arrays-reactjs-antd-development)
@@ -319,7 +318,9 @@ All CSS code passed through the validator without any issues.
 	} 
 	} 
 
-![JSX Validation](documentation/validation/eslint-validation.png)
+I used last one. Add "react/display-name": "off" in .eslintrc.json file.
+
+
 
 
 
