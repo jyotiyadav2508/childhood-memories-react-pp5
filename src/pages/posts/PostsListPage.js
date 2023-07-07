@@ -28,7 +28,7 @@ function PostsListPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-  const currentUser = useCurrentUser();  
+  const [currentUser] = useCurrentUser();  
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState(null);
 

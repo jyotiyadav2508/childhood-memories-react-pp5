@@ -35,7 +35,7 @@ const Comment = (props) => {
    * To restrict owner of the post not to like their own post
    * */
 
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
 //   const history = useHistory();
   const isOwner = currentUser?.username === owner;
   const [showEditForm, setShowEditForm] = useState(false);

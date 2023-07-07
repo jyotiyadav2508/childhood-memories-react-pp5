@@ -14,7 +14,7 @@ import appStyles from "../../App.module.css";
 const UserPasswordForm = () => {
   const history = useHistory();
   const { id } = useParams();
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
 
   const [userData, setUserData] = useState({
     new_password1: "",

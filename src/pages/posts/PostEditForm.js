@@ -18,7 +18,7 @@ import btnStyles from "../../styles/Button.module.css";
  */
 function PostEditForm() {
   const [errors, setErrors] = useState({});
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
 
   const [postData, setPostData] = useState({
     title: "",

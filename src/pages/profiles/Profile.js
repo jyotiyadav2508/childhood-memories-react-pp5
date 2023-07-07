@@ -19,7 +19,7 @@ const Profile = (props) => {
   const { profile, mobile, imageSize = 55 } = props;
   const { id, following_id, image, owner } = profile;
 
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
   const isOwner = currentUser?.username === owner;
 
   const { handleFollow, handleUnfollow } = useSetProfileData();

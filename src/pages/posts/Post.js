@@ -34,7 +34,7 @@ const Post = (props) => {
    * For user authentication
    * To restrict owner of the post not to like their own post
    * */
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 //   const [showAlert, setShowAlert] = useState(false);

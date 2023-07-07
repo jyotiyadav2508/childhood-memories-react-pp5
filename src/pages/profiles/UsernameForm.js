@@ -21,7 +21,7 @@ const UsernameForm = () => {
   const history = useHistory();
   const { id } = useParams();
 
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
   useEffect(() => {

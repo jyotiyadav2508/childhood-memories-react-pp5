@@ -15,6 +15,7 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useRedirect } from "../../hooks/useRedirect";
+import FeedbackMsg from '../../components/Feedbackmsg';
 
 /**
  * Form to create posts
@@ -23,7 +24,7 @@ function PostCreateForm() {
   useRedirect("loggedOut");
 
   const [errors, setErrors] = useState({});
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
 
   const [postData, setPostData] = useState({
     title: "",
@@ -34,6 +35,7 @@ function PostCreateForm() {
   const { title, content, image, category } = postData;
   const imageInput = useRef(null);
   const history = useHistory();
+  const [showAlert, setShowAlert] = useState(false);
 
   /**
    * Populate the postData strings
@@ -61,7 +63,7 @@ function PostCreateForm() {
   /**
    * submits data to childhood-memories-drf-api
    */
-  const handleSubmit = async (event) => {
+   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
 
@@ -72,7 +74,10 @@ function PostCreateForm() {
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
-      history.push(`/posts/${data.id}`);
+      setShowAlert(true);
+      setTimeout(function() {
+        history.push(`/posts/${data.id}`);
+      }, 5000);
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -82,6 +87,10 @@ function PostCreateForm() {
 
   return (
     <Container>
+    {showAlert && (
+        <FeedbackMsg type="success" message="Your post has been successfully posted." />
+    )}
+    
       <h3 className={`${styles.Title} mt-3`}>
         Welcome {currentUser?.username} , Let's share some childhood memory with
         us!

@@ -20,7 +20,7 @@ export const ProfileDataProvider = ({ children }) => {
     popularProfiles: { results: [] },
   });
 
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
 
   const handleFollow = async (clickedProfile) => {
     try {

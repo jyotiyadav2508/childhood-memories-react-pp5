@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const DeleteModal=({onDelete, onCancel}) => {
-    const currentUser = useCurrentUser();
+    const [currentUser] = useCurrentUser();
     return (
       <>  
         <Modal show={true} onHide={onCancel}>

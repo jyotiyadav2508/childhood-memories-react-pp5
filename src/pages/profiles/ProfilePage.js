@@ -29,7 +29,7 @@ import { ProfileEditDropdown } from "../../components/DropdownMenu";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
   const { id } = useParams();
   const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();

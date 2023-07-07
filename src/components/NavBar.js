@@ -19,7 +19,7 @@ import { removeTokenTimestamp } from "../utils/utils";
  * Codes credit: CI's Moments walkthrough - Modified to fit the features
  */
 const NavBar = () => {
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();

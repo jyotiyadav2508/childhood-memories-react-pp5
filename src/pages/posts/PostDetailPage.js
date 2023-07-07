@@ -22,7 +22,7 @@ import PopularProfiles from "../profiles/PopularProfiles";
 const PostDetailPage = () => {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
-  const currentUser = useCurrentUser();
+  const [currentUser] = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
 
