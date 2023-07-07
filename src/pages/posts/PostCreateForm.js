@@ -74,10 +74,10 @@ function PostCreateForm() {
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
-      setShowAlert(true);
+    setShowAlert(true);
       setTimeout(function() {
         history.push(`/posts/${data.id}`);
-      }, 5000);
+      }, 1500);
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -89,8 +89,7 @@ function PostCreateForm() {
     <Container>
     {showAlert && (
         <FeedbackMsg type="success" message="Your post has been successfully posted." />
-    )}
-    
+    )}    
       <h3 className={`${styles.Title} mt-3`}>
         Welcome {currentUser?.username} , Let's share some childhood memory with
         us!

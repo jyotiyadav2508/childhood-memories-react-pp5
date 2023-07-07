@@ -337,6 +337,11 @@ The tasks that I have followed during the development phase were carried out in 
 - Create Frontend Repository in GitHub
 
 ### Future Task
+There are a few features I wanted to build on. But due to severe time constraints, the App is in it's basic form.
+  - Want to use react-notify-toast to show users notification for their different actions, instead of using custom feedback alert message.
+  - Want to add emoji-picker in comment section.
+  - Proper category badge display and active badge on clicking.
+  - Wish to include a feature where users can add a media file instead of an image file if they wish to share a video.
 
 [Back to top ⇧](#contents)
 
@@ -503,6 +508,15 @@ The Post Detail page looks like as shown below:
 - Logged in user can click either avatar from NavBar or from popular profiles panel to navigate to pofile page, where he can update his/her profile info. Also they can see number of post, number of followers, number of following and list of post posted by user so far.
 The Post Detail page looks like as shown below:
 ![Profile Page](documentation/features/profile-page.png)
+
+### Delete modal and Alert message 
+  - A delete modal is displayed asking the user for confirmation to delete a post or comment.
+  ![Delete Modal](documentation/features/delete-modal.png))
+
+  - When the user successfully adds a post, an alert message is displayed.
+  ![Alert message](documentation/features/alert-msg.png)
+
+  ---
 
 ## Components
 A number of the components created are reusable and were used across the website in multiple pages and sections.
